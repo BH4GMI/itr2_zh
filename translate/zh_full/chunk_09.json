@@ -1,0 +1,3101 @@
+[
+ {
+  "source_id": "0010e9cb865f9544",
+  "source": "9x18 Tracer",
+  "char_len": 11,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "9x18 Трассирующие"
+  ],
+  "reference_ja": [
+   "9x18 トレーサー"
+  ]
+ },
+ {
+  "source_id": "042e31ab9cb10c0a",
+  "source": "Please note that only 4 walkie-talkies can be working at the same time.",
+  "char_len": 71,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Найти потерянный сенсор"
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "048f42fafd03f8ff",
+  "source": "Can be used with a Head Flashlight and night vision devices via NVD Mount.",
+  "char_len": 74,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "NVDマウントを介してヘッドライトおよび暗視装置を使用可能。"
+  ]
+ },
+ {
+  "source_id": "06abe4be095787d0",
+  "source": "Explore the Radius",
+  "char_len": 18,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Найдите гнездо в кластере."
+  ],
+  "reference_ja": [
+   "Radiusを探索する"
+  ]
+ },
+ {
+  "source_id": "075aef0638a1642d",
+  "source": "Telescopic sight with variable magnification.\r\nCan be attached to any rail.",
+  "char_len": 75,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Телескопический прицел с переменным увеличением.Может быть установлен на любой рейл."
+  ],
+  "reference_ja": [
+   "倍率を変えられる望遠照準器です。\r\nあらゆるレールに取り付け可能です。"
+  ]
+ },
+ {
+  "source_id": "08648560ab8a8f40",
+  "source": "Buckshot",
+  "char_len": 8,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Дробь"
+  ],
+  "reference_ja": [
+   "バックショット"
+  ]
+ },
+ {
+  "source_id": "09dd5041b8527153",
+  "source": "Altered Teacup",
+  "char_len": 14,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Измененная чашка"
+  ],
+  "reference_ja": [
+   "改造ティーカップ"
+  ]
+ },
+ {
+  "source_id": "0cf4f62d6a101b2e",
+  "source": "15 tracer slug cartridges for IZh-27 and Saiga-12.",
+  "char_len": 50,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "15 трассирующих патронов пули для ИЖ-27 и Сайги-12."
+  ],
+  "reference_ja": [
+   "IZh-27およびSaiga-12用の曳光弾スラグ弾15発。"
+  ]
+ },
+ {
+  "source_id": "0e5f69de946fe7c1",
+  "source": "7.62x51 FMJ Ammo Box",
+  "char_len": 20,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Коробка патронов 7.62x51 ПМ"
+  ],
+  "reference_ja": [
+   "7.62x51 FMJ弾薬箱"
+  ]
+ },
+ {
+  "source_id": "0f9b8d74f00f79ad",
+  "source": ".45 ACP FMJ Ammo Large Box",
+  "char_len": 26,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Отправляйтесь в указанное место и активируйте сенсор для сканирования артефакта."
+  ],
+  "reference_ja": [
+   ".45 ACP FMJ大型弾薬箱"
+  ]
+ },
+ {
+  "source_id": "12691a23568f8051",
+  "source": "Old Pantry Tin",
+  "char_len": 14,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Старая жестяная банка из кладовой"
+  ],
+  "reference_ja": [
+   "古いパントリーの缶"
+  ]
+ },
+ {
+  "source_id": "12fadf23469f49a8",
+  "source": "MP5 Folding Buttstock",
+  "char_len": 21,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Принесите артефакт с указанного кластера аномалий на Полуострове."
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "13a3f05da767ce8b",
+  "source": "Side to Stash Tablet",
+  "char_len": 20,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Сторона для размещения планшета"
+  ],
+  "reference_ja": [
+   "タブレットを収納できるサイド"
+  ]
+ },
+ {
+  "source_id": "171043460e663127",
+  "source": "Field Equipment",
+  "char_len": 15,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Полевое оборудование"
+  ],
+  "reference_ja": [
+   "フィールド機器"
+  ]
+ },
+ {
+  "source_id": "1a3a064cf6a638ec",
+  "source": "Security Level 3 Patch",
+  "char_len": 22,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "セキュリティレベル3パッチ"
+  ]
+ },
+ {
+  "source_id": "1b48d3f014245f7c",
+  "source": "Finance",
+  "char_len": 7,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставьте сенсор в терминал на Объекте 27."
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "1ea05ca38c2b7733",
+  "source": "Deliver the Sample Containers",
+  "char_len": 29,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставьте контейнер ООНПС в терминал на Объекте 27."
+  ],
+  "reference_ja": [
+   "サンプル容器を届ける"
+  ]
+ },
+ {
+  "source_id": "1f3bde0a85e0b23f",
+  "source": "Altered C-Clamp",
+  "char_len": 15,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "変異したCクランプ"
+  ]
+ },
+ {
+  "source_id": "218887269ad5946d",
+  "source": "Team",
+  "char_len": 4,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Команда"
+  ],
+  "reference_ja": [
+   "チーム"
+  ]
+ },
+ {
+  "source_id": "225f3cd287ef6d90",
+  "source": "Get armed and equipped by working for the Committee. Together with your Guide, find a path to the Heart of the Radius.",
+  "char_len": 118,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставьте добытый артефакт на Объект 27 и сдайте его в Командном помещении для дальнейшего изучения ООНПС."
+  ],
+  "reference_ja": [
+   "委員会の仕事をこなし、武器と装備を整えろ。ガイドと共に、Radiusの中心〈ハート〉へ続く道を見つけるんだ。"
+  ]
+ },
+ {
+  "source_id": "2374930702c1649f",
+  "source": "Report the result",
+  "char_len": 17,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Наденьте защитный головной убор от искажений перед входом в зону искажений. Найдите сенсор внутри нее."
+  ],
+  "reference_ja": [
+   "結果を報告する"
+  ]
+ },
+ {
+  "source_id": "244fb7fa01d268a2",
+  "source": "<L0>Handguns</L0>",
+  "char_len": 17,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</L0>",
+   "<L0>"
+  ],
+  "reference_ru": [],
+  "reference_ja": [
+   "<L0>ハンドガン</L0>"
+  ]
+ },
+ {
+  "source_id": "26166904fe33cb9b",
+  "source": "/another ant in the anthill/",
+  "char_len": 28,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": []
+ },
+ {
+  "source_id": "27e8ad075546761e",
+  "source": "Essential firearm part without which it will not fire.\r\nOnly for M4A1 Railed Handguard.",
+  "char_len": 87,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Необходимая часть огнестрельного оружия, без которой оно не будет стрелять.Только для рукояти G36 с рейлами."
+  ],
+  "reference_ja": [
+   "これがないと発砲できない重要な銃器部品です。\r\nM4A1 レール ハンドガード専用。"
+  ]
+ },
+ {
+  "source_id": "2cb6bbc5cde1e1b4",
+  "source": "Classic Backpack",
+  "char_len": 16,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Извлечение артефактов"
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "302518fe3c5447be",
+  "source": "Allows fitting the Remington 700 with AR buttstocks.",
+  "char_len": 52,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Исследуйте места и найдите требуемые артефакты в обычных кластерах аномалий."
+  ],
+  "reference_ja": [
+   "レミントン700にARバットストックを装着できるようにする。"
+  ]
+ },
+ {
+  "source_id": "32b445eb18aa2bd4",
+  "source": "G36 Medium Handguard",
+  "char_len": 20,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Среднее цевье G36"
+  ],
+  "reference_ja": [
+   "G36 ミディアムハンドガード"
+  ]
+ },
+ {
+  "source_id": "32bd65d1c20590f7",
+  "source": "Stashed SR-25",
+  "char_len": 13,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Спрятанная SR-25"
+  ],
+  "reference_ja": [
+   "隠しておいたSR-25"
+  ]
+ },
+ {
+  "source_id": "3508924692fb0ea4",
+  "source": "If you're experiencing physical or mental discomfort:\r\n1. Inhale and exhale slowly.\r\n2. Move around: do some squats, stretch forward, jump in place, and swing your arms.\r\n3. Say out loud: 5 objects you can see / 5 sounds you can hear / your Explorer ID and Facility number.\r\n4. Take a shower.\r\n5. Get a good night's sleep.\r\n6. Request support from your fellow Explorer during the next expedition.",
+  "char_len": 396,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Используйте детектор артефактов для поиска артефактов. Используйте зонды для идентификации аномалий в кластере."
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "358c85a9ec23aa09",
+  "source": "Holographic sight with red circle reticle.\r\nCan be attached to any rail.",
+  "char_len": 72,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Голографический прицел с красным круглым прицелом.Может быть установлен на любой рейл."
+  ],
+  "reference_ja": [
+   "赤い円形レチクルを備えたホログラフィック サイト。\r\nどのレールにも取り付けることができます。"
+  ]
+ },
+ {
+  "source_id": "3636621984c67b75",
+  "source": "Reach the isolated location though a Door Anomaly and extract an Artifact from an Invisible Nest.",
+  "char_len": 97,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "ドア異常を通って隔離地点に到達し、見えないネストからアーティファクトを抽出する。"
+  ]
+ },
+ {
+  "source_id": "380a217a94daab8f",
+  "source": "Fully automatic assault rifle chambered in 5.56x45 for mid-range combat.\r\nThis modified version has more compatibility options for a wide range of attachments.",
+  "char_len": 159,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Полностью автоматическая винтовка под патрон 5.56x45 для боя на средней дистанции.Эта модифицированная версия имеет больше возможностей совместимости для широкого спектра навесного оборудования."
+  ],
+  "reference_ja": [
+   "中距離戦闘用の 5.56x45 口径の全自動アサルトライフルです。\r\nこの改良型には、さまざまなアタッチメントとの互換性オプションがさらに追加されています。"
+  ]
+ },
+ {
+  "source_id": "3c25cd133bbde61c",
+  "source": "Pattern (Pixel)",
+  "char_len": 15,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "パターン（ピクセル）"
+  ]
+ },
+ {
+  "source_id": "3d4256a5a2c9d70d",
+  "source": "Old Mechanical Clock",
+  "char_len": 20,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "古い機械式時計"
+  ]
+ },
+ {
+  "source_id": "3e86f16b3dcd1a3e",
+  "source": "AR Buttstock Adapter",
+  "char_len": 20,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Стандартный адаптер AR"
+  ],
+  "reference_ja": [
+   "AR バットストックアダプター"
+  ]
+ },
+ {
+  "source_id": "3ed5f9e8155430a0",
+  "source": "Classic Kit",
+  "char_len": 11,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставьте сенсор в терминал на Объекте 27."
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "3f18aaae6174162f",
+  "source": "Gun Modifications",
+  "char_len": 17,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Модификации оружия"
+  ],
+  "reference_ja": [
+   "銃の改造"
+  ]
+ },
+ {
+  "source_id": "42f659b5f88f62fd",
+  "source": "Gun Light",
+  "char_len": 9,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Фонарик для оружия"
+  ],
+  "reference_ja": [
+   "ガンライト"
+  ]
+ },
+ {
+  "source_id": "44b62703e5c39d26",
+  "source": "Remote Control Wristband",
+  "char_len": 24,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "リモートコントロール・リストバンド"
+  ]
+ },
+ {
+  "source_id": "453f5fb7e001e449",
+  "source": "The creation is complete...",
+  "char_len": 27,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "創造は完了した…"
+  ]
+ },
+ {
+  "source_id": "45abf1e319209fc8",
+  "source": "To turn on/off an attachment mounted on a weapon, <b>Hold {BTN_Bottom} + Trigger</b>.",
+  "char_len": 85,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</b>",
+   "<b>",
+   "{BTN_Bottom}"
+  ],
+  "reference_ru": [],
+  "reference_ja": [
+   "武器に取り付けられたアタッチメントをオン/オフするには、<b>{BTN_Bottom} + Trigger</b>を押す。"
+  ]
+ },
+ {
+  "source_id": "45daf07e4263cea7",
+  "source": "Treatment Unit",
+  "char_len": 14,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Лечебный блок"
+  ],
+  "reference_ja": [
+   "治療ユニット"
+  ]
+ },
+ {
+  "source_id": "46962f3918adf63f",
+  "source": "Compact G3",
+  "char_len": 10,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Техническое обслуживание"
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "471e3b02d45aac66",
+  "source": "Place the Sensor",
+  "char_len": 16,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Вставьте магазин в пистолет.",
+   "Если вы уже носите жилет,<b>удерживайте {BTN_Bottom} и схватите его</b> для снятия.",
+   "Фонарик для крепления на огнестрельное оружие и шлемы с рейлом."
+  ],
+  "reference_ja": [
+   "センサーを設置する"
+  ]
+ },
+ {
+  "source_id": "472ae06b26f2db08",
+  "source": "PASGT Helmet",
+  "char_len": 12,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Шлем PASGT"
+  ],
+  "reference_ja": [
+   "PASGTヘルメット"
+  ]
+ },
+ {
+  "source_id": "486d75f32c25c2d2",
+  "source": "Grab the Chest Rig, bring it to your chest\r\nand release to put it on.",
+  "char_len": 69,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "チェストリグをつかんで胸に当て、放して装着します。"
+  ]
+ },
+ {
+  "source_id": "4b819c97638f5e3c",
+  "source": "Secure the Artifact",
+  "char_len": 19,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "アーティファクトを確保する"
+  ]
+ },
+ {
+  "source_id": "4cb7fd097506bd34",
+  "source": "Oh, I'm so done with these UNPSC dogs and their toys!..",
+  "char_len": 55,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставить сенсор искажений"
+  ],
+  "reference_ja": [
+   "ああ、UNPSCの犬どもとそのオモチャにはもううんざりだ！.."
+  ]
+ },
+ {
+  "source_id": "4ed6ece28c09b7d2",
+  "source": "Well... Looks like we really stirred things up! Everyone's running around like crazy! I was even called in to see the boss!.. Anyway, they've put a temporary moratorium on any serious experiments for all Explorers – and some have been reassigned to test the new portals. As for us, we're sticking to the simple stuff – no more complex interventions for now.",
+  "char_len": 357,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставить чемоданчик"
+  ],
+  "reference_ja": [
+   "さて…どうやら本当に大騒ぎになったみたいだ！みんな狂ったように走り回ってる！私まで上司に呼び出されたよ！…とにかく、すべての探索者に対して重大な実験は一時的に停止された  -  それに何人かは新しいポータルのテストに再配置された。私たちは簡単な仕事に専念することになった  -  しばらくは複雑な介入はなしだ。"
+  ]
+ },
+ {
+  "source_id": "4efc271037deaea8",
+  "source": "Elevator Button Artifact",
+  "char_len": 24,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "エレベーターボタン"
+  ]
+ },
+ {
+  "source_id": "543363f1171c1eaf",
+  "source": "Distant Dachas",
+  "char_len": 14,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "遠方のダーチャ"
+  ]
+ },
+ {
+  "source_id": "54f6a08338f20b3b",
+  "source": "Saiga-12 Short Barrel",
+  "char_len": 21,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Короткий ствол Сайга-12"
+  ],
+  "reference_ja": [
+   "サイガ12 ショートバレル"
+  ]
+ },
+ {
+  "source_id": "5677866bfddac643",
+  "source": "The item is <b>fully functional!</b>",
+  "char_len": 36,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</b>",
+   "<b>"
+  ],
+  "reference_ru": [
+   "Предмет <b>полностью функционален!</b>"
+  ],
+  "reference_ja": [
+   "商品は<b>完全に機能します!</b>"
+  ]
+ },
+ {
+  "source_id": "577fd819aed4413a",
+  "source": "Are you sure you want to exit to Main Menu?",
+  "char_len": 43,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Вы уверены, что хотите выйти в главное меню?"
+  ],
+  "reference_ja": [
+   "メインメニューに戻りますか?"
+  ]
+ },
+ {
+  "source_id": "59b1d9e6407ebfa5",
+  "source": "Kochetov Mount",
+  "char_len": 14,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Крепление Кочетова"
+  ],
+  "reference_ja": [
+   "コチェトフ山"
+  ]
+ },
+ {
+  "source_id": "5af91469d05e6fd8",
+  "source": "No players found",
+  "char_len": 16,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Игроки не найдены"
+  ],
+  "reference_ja": [
+   "プレイヤーが見つかりません"
+  ]
+ },
+ {
+  "source_id": "5c660b64617561d2",
+  "source": "Very Low",
+  "char_len": 8,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Очень низкая"
+  ],
+  "reference_ja": [
+   "非常に低い"
+  ]
+ },
+ {
+  "source_id": "5c9e038a0d8300a3",
+  "source": "Single tube binocular night vision device with narrow FOV.\r\nBlocks peripheral vision.\r\nCan be attached to NVD Mount.",
+  "char_len": 116,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "狭視野角のシングルチューブ双眼暗視装置。\r\n周辺視野を遮る。\r\nNVDマウントに装着可能。"
+  ]
+ },
+ {
+  "source_id": "5dc9803a259ddc48",
+  "source": "//Updating current user data...",
+  "char_len": 31,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "//現在のユーザーデータを更新中…"
+  ]
+ },
+ {
+  "source_id": "5fb4e63fd926685e",
+  "source": "Top Priority Mission",
+  "char_len": 20,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Приоритетная миссия"
+  ],
+  "reference_ja": [
+   "最優先ミッション"
+  ]
+ },
+ {
+  "source_id": "602f9d8ee5291348",
+  "source": "An ordinary item from 1980s Pechorsk.\r\nHolds no interest to the UNPSC and can't be exchanged for Supply Credits.",
+  "char_len": 112,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Обычный предмет из Печорска 1980-х годов.Не представляет интереса для ООНПС и не может быть обменян на кредиты снабжения."
+  ],
+  "reference_ja": [
+   "1980 年代のペチョルスク地方の一般的なアイテムです。\r\nUNPSC にとって何の利益ももたらさず、サプライ クレジットと交換することはできません。"
+  ]
+ },
+ {
+  "source_id": "609d9fe2f7555cbb",
+  "source": "You can't go there from here.",
+  "char_len": 29,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Вы не можете туда попасть отсюда."
+  ],
+  "reference_ja": [
+   "ここからそこへは行けません。"
+  ]
+ },
+ {
+  "source_id": "614897af888a6604",
+  "source": "Stashed AS Val Description",
+  "char_len": 26,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Описание спрятанного АС Вал"
+  ],
+  "reference_ja": [
+   "保存されたAS値の説明"
+  ]
+ },
+ {
+  "source_id": "64426754bfa52fc0",
+  "source": "Poking around those \"doors\" is a bold move! Look, that is no ordinary church. It's locked up, so you'll have to find a way inside. The bells might be worth a closer look – they seem to be protecting it.",
+  "char_len": 202,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "ああ、あの「ドア」をいじるなんて大胆だな！見てみろ、あれは普通の教会じゃない。鍵が掛かっているから、中へ入る方法を見つけないといけない。鐘をよく調べてみるといい  -  あれが教会を守っているようだ。"
+  ]
+ },
+ {
+  "source_id": "65d6d13c67b0af39",
+  "source": "This change will only take place after the closest Tide and won't affect the Anomaly Clusters!",
+  "char_len": 94,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Это изменение вступит в силу только после ближайшего прилива и не повлияет на кластеры аномалий!"
+  ],
+  "reference_ja": [
+   "この変更は最も近い潮汐の後にのみ行われ、異常クラスターには影響しません。"
+  ]
+ },
+ {
+  "source_id": "66942e4e09c04e0e",
+  "source": "Your Time",
+  "char_len": 9,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставьте сломанный сенсор с одного из указанных мест на Окраинах Печорска."
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "6920d9a795719ce2",
+  "source": "Receive the Throwsondes",
+  "char_len": 23,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "<b>Гнезда артефактов</b> легче найтис помощью <b>детектора артефактов</b>. Он издаетзвук когда рядом есть гнездо."
+  ],
+  "reference_ja": [
+   "スローソンデを受け取る"
+  ]
+ },
+ {
+  "source_id": "6adb0a4a9ecfb198",
+  "source": "SKS Grip Stock",
+  "char_len": 14,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "SKS グリップストック"
+  ]
+ },
+ {
+  "source_id": "6c24d7176a8b4ceb",
+  "source": "Incoming Damage Reduction",
+  "char_len": 25,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Снижение входящего урона"
+  ],
+  "reference_ja": [
+   "受けるダメージの軽減"
+  ]
+ },
+ {
+  "source_id": "6f6e77dc253c1396",
+  "source": "• Wear before entering a Distortion Zone.\r\n• Bring close to the head and release to wear.\r\n• <b>Hold {BTN_Bottom} + {BTN_Grip}</b> to take it off.\r\n• Track the remaining operating time on your watch.\r\n• Wait outside the Distortion Zone for headgear to recharge.",
+  "char_len": 261,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</b>",
+   "<b>",
+   "{BTN_Bottom}",
+   "{BTN_Grip}"
+  ],
+  "reference_ru": [],
+  "reference_ja": [
+   " -  歪曲ゾーンに入る前に装着する。\r\n -  頭部に近づけて離すと装着される。\r\n -  <b>{BTN_Bottom} + {BTN_Grip}</b>を押し続けて取り外す。\r\n -  残り稼働時間を腕時計で確認する。\r\n -  歪曲ゾーン外でヘッドギアの再充電を待つ。"
+  ]
+ },
+ {
+  "source_id": "70f69eda3e5f0b69",
+  "source": "Center of the Radius",
+  "char_len": 20,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Центр Радиуса "
+  ],
+  "reference_ja": [
+   "Radiusの中心"
+  ]
+ },
+ {
+  "source_id": "71595f9874aaad6a",
+  "source": "Place an Amplifier on the marked spot.",
+  "char_len": 38,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Найти сенсор"
+  ],
+  "reference_ja": [
+   "指定地点にアンプを設置する。"
+  ]
+ },
+ {
+  "source_id": "719ea396ad92e01b",
+  "source": "Clear",
+  "char_len": 5,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Очистить"
+  ],
+  "reference_ja": [
+   "クリア"
+  ]
+ },
+ {
+  "source_id": "71da8eba601d46ff",
+  "source": "Stashed SVD Description",
+  "char_len": 23,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Описание спрятанной СВД"
+  ],
+  "reference_ja": [
+   "保管されたSVDの説明"
+  ]
+ },
+ {
+  "source_id": "7318d5e5186c0e32",
+  "source": "Selective-fire assault rifle chambered in 7.62x39. It delivers powerful, reliable performance in diverse combat scenarios.",
+  "char_len": 122,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Автоматическая винтовка с селективной стрельбой под патрон 7.62x39. Обеспечивает мощную и надежную производительность в различных боевых сценариях."
+  ],
+  "reference_ja": [
+   "7.62x39口径のセレクティブファイアアサルトライフル。多様な戦闘シナリオにおいて、強力で信頼性の高い性能を発揮します。"
+  ]
+ },
+ {
+  "source_id": "739c485d60e65bea",
+  "source": "INTO THE RADIUS 2 TEAM",
+  "char_len": 22,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Найти потерянный сенсор"
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "73e7cbbbbde56815",
+  "source": "120 regular cartridges for AKM and SKS.",
+  "char_len": 39,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "120 обычных патронов для АКМ и СКС."
+  ],
+  "reference_ja": [
+   "AKM および SKS 用の通常カートリッジ 120 個。"
+  ]
+ },
+ {
+  "source_id": "7438fba8aa04895c",
+  "source": "SR-25 Short Barrel",
+  "char_len": 18,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Короткий ствол SR-25"
+  ],
+  "reference_ja": [
+   "SR-25 ショートバレル"
+  ]
+ },
+ {
+  "source_id": "745b1c951ea6b7a1",
+  "source": "Look, here's the passage. If we pull this off, it's yours. Anytime you need to get to the next sector, it'll be right here. Our first real step towards the heart of the Radius. Ready? Let's do this.",
+  "char_len": 198,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "見て、これが通路だ。これを成功させれば、これは君のものになる。次のセクターへ行きたい時はいつでもここに現れる。レイディアスの中心へ向かう最初の本当の一歩だ。準備はいい？行こう。"
+  ]
+ },
+ {
+  "source_id": "755db1277f1a8cf3",
+  "source": "landmine",
+  "char_len": 8,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "мина"
+  ],
+  "reference_ja": [
+   "地雷"
+  ]
+ },
+ {
+  "source_id": "77117d0c2b591ef0",
+  "source": "Place the unfolded TED on the marked spot.",
+  "char_len": 42,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Найти сенсор"
+  ],
+  "reference_ja": [
+   "展開したTEDを指定地点に設置する。"
+  ]
+ },
+ {
+  "source_id": "778515f0e63ef30c",
+  "source": "<L3>Pechorsk Outskirts is one of the sectors of the Pechorsk Anomaly supposedly replicating the outer area of Pechorsk with parts of the town's infrastructure. Housing units densely populated with armed hostile entities.</L3>",
+  "char_len": 225,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</L3>",
+   "<L3>"
+  ],
+  "reference_ru": [
+   "Город Мне жаль слышать о вашей боли, но я боюсь, что у меня будет сильно болеть голова. Что касается минимальных способностей, то любая наша рутинная работа преследует только те цели, которые заложены в ней как в удобном рецепте, поэтому, пожалуйста, следуйте инструкциям. Клянусь богом, что боль в заднице была бы невыносимой, если бы я сбежал без родителей. Я посторонний, я не виновен, я несу ответственность за работника."
+  ],
+  "reference_ja": [
+   "<L3>ペチョルスク郊外は、ペチョルスクの外縁部と町のインフラの一部を再現しているとされるペチョルスク異常のセクターの一つである。住宅地には武装した敵対存在が密集している。</L3>"
+  ]
+ },
+ {
+  "source_id": "77a395274dbe22bc",
+  "source": "Are you sure you want to unlist the Co-op game you previously played as a guest?",
+  "char_len": 80,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Вы уверены, что хотите удалить кооперативную игру, в которой вы ранее играли как гость?"
+  ],
+  "reference_ja": [
+   "以前ゲストとしてプレイした Co-op ゲームをリストから削除してもよろしいですか?"
+  ]
+ },
+ {
+  "source_id": "7b48bda5ac1efbd1",
+  "source": "• Move over the shoulder and release to equip or stash.\r\n• {BTN_Grip}</b> over the shoulder to take out. Backpack doesn't require holding while in use.\r\n• <b>Hold {BTN_Bottom} + {BTN_Grip}</b> over the shoulder or hang it on a rack to unequip before swapping for another backpack.",
+  "char_len": 280,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</b>",
+   "<b>",
+   "{BTN_Bottom}",
+   "{BTN_Grip}"
+  ],
+  "reference_ru": [
+   "• Переместите через плечо и отпустите для экипировки или у stashирования.• b>{BTN_Grip}</b> через плечо для изъятия. Рюкзак не требует удержания во время использования.• b>Удерживайте {BTN_Bottom} + {BTN_Grip}</b> через плечо или повесьте на стойку для снятия перед заменой на другой рюкзак."
+  ],
+  "reference_ja": [
+   "- 肩越しに動かして放すと装備または収納できます。\r\n- {BTN_Grip</b> を肩越しに持つと取り出せます。バックパックは使用中に保持する必要はありません。\r\n- <b>別のバックパックに交換する前に、{BTN_Bottom} + {BTN_Grip</b> を肩越しに持つか、ラックに掛けて装備を解除します。"
+  ]
+ },
+ {
+  "source_id": "7c5602240d4c60c9",
+  "source": "Hold the Compass Artifact close to your palm to absorb it.",
+  "char_len": 58,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "コンパスアーティファクトを手のひらに近づけて吸収する。"
+  ]
+ },
+ {
+  "source_id": "7c61cb336c1a6a31",
+  "source": "Fragmentation hand grenade.",
+  "char_len": 27,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Восстановите прототип защиты от искажений, оставленный в одном из указанных мест.",
+   "Доставьте артефакт в терминал на Объекте 27."
+  ],
+  "reference_ja": [
+   "破片手榴弾。"
+  ]
+ },
+ {
+  "source_id": "7d6ba83d1640fece",
+  "source": "Stashed AKS-74U",
+  "char_len": 15,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Спрятанный АКС-74У"
+  ],
+  "reference_ja": [
+   "隠蔽されたAKS-74U"
+  ]
+ },
+ {
+  "source_id": "7df5310fcfcd8dbf",
+  "source": "Place the Artifact into the Activator",
+  "char_len": 37,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "ドアアーティファクトを確保する"
+  ]
+ },
+ {
+  "source_id": "801ba20f86de2b02",
+  "source": "Upon a successful evaluation, you have been appointed as UNPSC Explorer, serial number 73.",
+  "char_len": 90,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "評価が成功したため、あなたはUNPSC探索者・識別番号73に任命されました。"
+  ]
+ },
+ {
+  "source_id": "80a43fa5630e828f",
+  "source": "Collect it to be able to complete your Mission.",
+  "char_len": 47,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Соберите его, чтобы иметь возможность выполнить вашу миссию."
+  ],
+  "reference_ja": [
+   "ミッションを完了するには、それを集めてください。"
+  ]
+ },
+ {
+  "source_id": "8152cc9d5eb0bfd0",
+  "source": "<L1>Crackers</L1><L2>Sprats</L2>",
+  "char_len": 32,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</L1>",
+   "</L2>",
+   "<L1>",
+   "<L2>"
+  ],
+  "reference_ru": [],
+  "reference_ja": [
+   "<L1>クラッカー</L1><L2>スプラット</L2>"
+  ]
+ },
+ {
+  "source_id": "815689716671b109",
+  "source": "Well... You did good! All this should keep you alive in the Pechorsk Anomaly. Now, head back to the Command Room and complete your current mission! There's a promotion waiting.",
+  "char_len": 176,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "まあ… よくやったわ！これでペチョルスク異常でも生き延びられるはず。さあ、司令室へ戻って現在のミッションを完了して！昇進が待っている。"
+  ]
+ },
+ {
+  "source_id": "817b79b0af2db11d",
+  "source": "Creator",
+  "char_len": 7,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Создатель"
+  ],
+  "reference_ja": [
+   "クリエイター"
+  ]
+ },
+ {
+  "source_id": "838804059a63d935",
+  "source": "UNPSC Artifact Container",
+  "char_len": 24,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "UNPSC アーティファクトコンテナ"
+  ]
+ },
+ {
+  "source_id": "858fe2d2492e2981",
+  "source": "SVD Muzzle Brake",
+  "char_len": 16,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Дульный тормоз СВД"
+  ],
+  "reference_ja": [
+   "SVDマズルブレーキ"
+  ]
+ },
+ {
+  "source_id": "87500b0049405741",
+  "source": "Greatly reduces the acoustic intensity and slightly compensates recoil.\r\nOnly for AK series, and OTs-14 Groza.",
+  "char_len": 110,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Сильно снижает акустическую интенсивность и немного компенсирует отдачу.Только для серии АК, модифицированной СКС и ОЦ-14 Гроза."
+  ],
+  "reference_ja": [
+   "音響強度を大幅に低減し、反動をわずかに軽減する。\r\nAKシリーズおよびOTs-14 グロザ専用。"
+  ]
+ },
+ {
+  "source_id": "8753f58cedd6ee6c",
+  "source": "A modernized weather sensor used by the Committee in the 1990s to monitor the Pechorsk Anomaly. It was phased out after the introduction of a new monitoring system.",
+  "char_len": 164,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Модернизированный метеорологический сенсор, используемый Комитетом в 1990-х годах для мониторинга Печорской Аномалии. Был выведен из эксплуатации после внедрения новой системы мониторинга."
+  ],
+  "reference_ja": [
+   "1990年代に委員会がペチョルスク異常帯の監視に使用していた近代化された気象センサー。新しい監視システムの導入後、段階的に廃止されました。"
+  ]
+ },
+ {
+  "source_id": "87de124d5edc84c5",
+  "source": "AK-74 Folding Buttstock",
+  "char_len": 23,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Складной приклад АК-74"
+  ],
+  "reference_ja": [
+   "AK-74 フォールディングバットストック"
+  ]
+ },
+ {
+  "source_id": "89c81c91d511af3e",
+  "source": "• Bring a grenade to the launcher's muzzle to load it.\r\n• <b>Press {BTN_Trigger}</b> with your hand on the launcher's pistol grip to fire.",
+  "char_len": 138,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</b>",
+   "<b>",
+   "{BTN_Trigger}"
+  ],
+  "reference_ru": [],
+  "reference_ja": [
+   " -  手榴弾をランチャーの銃口に近づけて装填する。\r\n -  ランチャーのピストルグリップに手を置き、<b>{BTN_Trigger}</b>を押して発射する。"
+  ]
+ },
+ {
+  "source_id": "8a985dad015a74b2",
+  "source": "Resume Game",
+  "char_len": 11,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Продолжить игру"
+  ],
+  "reference_ja": [
+   "ゲームを再開する"
+  ]
+ },
+ {
+  "source_id": "8be1fd6de4109f5a",
+  "source": "Weapons & Stuff",
+  "char_len": 15,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Оружие и прочее"
+  ],
+  "reference_ja": [
+   "武器とその他"
+  ]
+ },
+ {
+  "source_id": "8d7cce071c562553",
+  "source": "<b>Hold {BTN_Bottom}</b> to eject the magazine\r\nor press to drop it.",
+  "char_len": 68,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</b>",
+   "<b>",
+   "{BTN_Bottom}"
+  ],
+  "reference_ru": [],
+  "reference_ja": [
+   "<b>{BTN_Bottom} を押したままにすると</b>マガジンが取り出され、\r\n押すと落とされます。"
+  ]
+ },
+ {
+  "source_id": "8e1dce212fe169e6",
+  "source": "Stashed M4A1",
+  "char_len": 12,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Спрятанная М4А1"
+  ],
+  "reference_ja": [
+   "隠しておいたM4A1"
+  ]
+ },
+ {
+  "source_id": "8e364e97c3c52105",
+  "source": "A handheld semi-automatic device designed to detect and locate Artifacts inside Artifact Nests within the Pechorsk Anomaly.\r\nWhen an Artifact is nearby, the device emits an audio signal that grows more intense as you approach. A visual indicator simultaneously points toward the Artifact – its brightness increases as your orientation becomes more accurate.\r\nThe 2005 detector model is light, compact, and ergonomic, but only features basic functions. It is intended for use with regular Artifact Nests <L3>and is incapable of detecting or revealing invisible Artifact Nests</L3>.",
+  "char_len": 580,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</L3>",
+   "<L3>"
+  ],
+  "reference_ru": [],
+  "reference_ja": [
+   "<L1>ペチョルスク異常内でアーティファクトを検知するための携帯型半自動デバイス。このモデルは2000年代のもので、委員会の初期の検知デバイスラインの一部である。ペチョルスク異常内でのアーティファクト回収ミッションでは必須装備である。</L1><L3></L3>"
+  ]
+ },
+ {
+  "source_id": "8f9109cb1c876bc2",
+  "source": "These anomalies are extremely rare. You need to reach one of them as soon as possible and launch these newly developed throwsondes into it so we can get the data we need.",
+  "char_len": 170,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "この異常は極めて稀だ。できるだけ早くその一つに到達し、開発されたばかりのスロウソンデを投げ込んで、必要なデータを取得してほしい。"
+  ]
+ },
+ {
+  "source_id": "8fae77832cea862e",
+  "source": "Allows for an alternative grip with the off-hand, slightly reducing recoil.\r\nCan be attached to any rail.",
+  "char_len": 105,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Позволяет альтернативный захват свободной рукой, немного снижая отдачу. Может быть установлен на любой рейл."
+  ],
+  "reference_ja": [
+   "反対の手で別のグリップを握ることができ、反動がわずかに軽減されます。\r\nどのレールにも取り付けることができます。"
+  ]
+ },
+ {
+  "source_id": "914896d697cc8c74",
+  "source": "Receive the Sensor",
+  "char_len": 18,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "<b>Удерживайте {BTN_Trigger}</b> для открытия коробки,и один патрон выпадет.",
+   "Поднесите руку через плечои <b>нажмите Захват</b> для извлечения рюкзака.Отпустите его перед собой."
+  ],
+  "reference_ja": [
+   "センサーを受け取る"
+  ]
+ },
+ {
+  "source_id": "921f537cf0510129",
+  "source": "Stashed SVD",
+  "char_len": 11,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Спрятанная СВД"
+  ],
+  "reference_ja": [
+   "隠されたSVD"
+  ]
+ },
+ {
+  "source_id": "93e18203853be78a",
+  "source": "Activate the first Throwsonde and throw it into the Door Anomaly.",
+  "char_len": 65,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "<b>Пепел</b> – аномальное вещество, котороеможно обнаружить по звуку. Пепел растворяетсяв ваших руках и преобразуется в <b>кредиты снабжения</b>.Попробуйте взять его."
+  ],
+  "reference_ja": [
+   "最初のスローソンデを起動し、ドア異常へ投げ込む。"
+  ]
+ },
+ {
+  "source_id": "94d4d4d3e3d8416b",
+  "source": "150 tracer cartridges for AK-74 and AKS-74U.",
+  "char_len": 44,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "150 трассирующих патронов для АК-74 и АКС-74У."
+  ],
+  "reference_ja": [
+   "AK-74 および AKS-74U 用の曳光弾 150 発。"
+  ]
+ },
+ {
+  "source_id": "952f375412e89ff2",
+  "source": "Start",
+  "char_len": 5,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "開始"
+  ]
+ },
+ {
+  "source_id": "95c072ce3e15ee82",
+  "source": "Allows fitting the SVD with AR pistol grips and buttstocks.",
+  "char_len": 59,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Позволяет оснащать СВД пистолетными рукоятками и прикладами AR."
+  ],
+  "reference_ja": [
+   "SVD に AR ピストルグリップおよびバットストックを装着可能にする。"
+  ]
+ },
+ {
+  "source_id": "96f608c16cef16ca",
+  "source": "Pending",
+  "char_len": 7,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "В ожидании"
+  ],
+  "reference_ja": [
+   "保留中"
+  ]
+ },
+ {
+  "source_id": "988408d99e08c9e3",
+  "source": "A versatile semi-automatic shotgun chambered in 12 gauge, it excels in close-quarters combat and dynamic shooting scenarios.",
+  "char_len": 124,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Универсальное полуавтоматическое ружье под патрон 12 калибра, отлично подходит для боя на короткой дистанции и динамических сценариев стрельбы."
+  ],
+  "reference_ja": [
+   "12 ゲージの汎用性の高い半自動ショットガンで、近距離戦闘やダイナミックな射撃シナリオに優れています。"
+  ]
+ },
+ {
+  "source_id": "99e01026f286523b",
+  "source": "Maximum of Flashlights",
+  "char_len": 22,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "懐中電灯の最大数"
+  ]
+ },
+ {
+  "source_id": "9a1b44a65150727c",
+  "source": "On the bright side, I have places like this. You can use them to move around in the Radius. Outside of them it's deadly. And you won't find food or water. So for now, play nice with the Committee, or they'll lock you out of the Facility.",
+  "char_len": 237,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "良い面を挙げるなら、こういう場所がある。レイディアス内を移動するために使える。ここ以外は致命的だ。それに食料も水も見つからない。だから今のところは委員会に従っておくんだ。さもないと施設への立ち入りを禁じられる。"
+  ]
+ },
+ {
+  "source_id": "9b4cd2511b05287c",
+  "source": "Essence Artifact S348",
+  "char_len": 21,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Артефакт сущности S348"
+  ],
+  "reference_ja": [
+   "エッセンスアーティファクト S348"
+  ]
+ },
+ {
+  "source_id": "9c6c1ba2d0a8084d",
+  "source": "Vityaz Rail for Dovetail Mount",
+  "char_len": 30,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Рейл Витязь для крепления Доветейл"
+  ],
+  "reference_ja": [
+   "ダブテールマウント用Vityazレール"
+  ]
+ },
+ {
+  "source_id": "9e80527ce28a8426",
+  "source": "Deliver the training item to the Terminal in the Command Room.",
+  "char_len": 62,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "司令室のターミナルへ訓練アイテムを届ける。"
+  ]
+ },
+ {
+  "source_id": "a03486d8b50b7e16",
+  "source": "Dust Cover",
+  "char_len": 10,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Пылезащитный чехол"
+  ],
+  "reference_ja": [
+   "ダストカバー"
+  ]
+ },
+ {
+  "source_id": "a395268c989ec92e",
+  "source": "M67 Grenade Pin",
+  "char_len": 15,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Используйте карту для навигации к месту и заберите контейнер ООНПС."
+  ],
+  "reference_ja": [
+   "M67手榴弾ピン"
+  ]
+ },
+ {
+  "source_id": "a45cccb60f5d7618",
+  "source": "Fall Damage",
+  "char_len": 11,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Урон от падения"
+  ],
+  "reference_ja": [
+   "落下ダメージ"
+  ]
+ },
+ {
+  "source_id": "a4f18c5506273830",
+  "source": "Mosin-Nagant 6x Cartridge Belt",
+  "char_len": 30,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Пояс патронов 6x для Мосина-Нагана"
+  ],
+  "reference_ja": [
+   "モシン・ナガン 6倍カートリッジベルト"
+  ]
+ },
+ {
+  "source_id": "a5944f7a44717f0b",
+  "source": "Explorer's Watch",
+  "char_len": 16,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Часы исследователя"
+  ],
+  "reference_ja": [
+   "エクスプローラーズウォッチ"
+  ]
+ },
+ {
+  "source_id": "a5c3887d63d43397",
+  "source": "Shelters",
+  "char_len": 8,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "シェルター"
+  ]
+ },
+ {
+  "source_id": "a6807a77fc3312f8",
+  "source": "Hold still! Scanning in progress...",
+  "char_len": 35,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "動かないで！スキャン中…"
+  ]
+ },
+ {
+  "source_id": "a6aab8e830066973",
+  "source": "Grab the pistol grip\r\nand bring it close to the frame in the vise\r\nto install.",
+  "char_len": 78,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Возьмите рукоятку пистолетаи поднесите ее к рамев тисках для установки."
+  ],
+  "reference_ja": [
+   "ピストルグリップをつかみ、バイス内のフレームに近づけて取り付けます。\r\n"
+  ]
+ },
+ {
+  "source_id": "a795eb80d2b07210",
+  "source": "Find a path to the new sector of the Pechorsk Anomaly.",
+  "char_len": 54,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "ペチョルスク異常の新セクターへの道を見つける。"
+  ]
+ },
+ {
+  "source_id": "a7fd0b63a55d89cd",
+  "source": "Impact on Weapon",
+  "char_len": 16,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Влияние на оружие"
+  ],
+  "reference_ja": [
+   "武器への影響"
+  ]
+ },
+ {
+  "source_id": "a8b9014b3486c4a8",
+  "source": "Reach the strange passage",
+  "char_len": 25,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": []
+ },
+ {
+  "source_id": "aa400c172e7183d1",
+  "source": "200 regular cartridges for Beretta, Glock, and MP9.",
+  "char_len": 51,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "200 обычных патронов для Беретты, Глока и МП9."
+  ],
+  "reference_ja": [
+   "ベレッタ、グロック、MP9用の通常カートリッジ200個。"
+  ]
+ },
+ {
+  "source_id": "ac4cbd29341a648b",
+  "source": "You'll also be field-testing a protective headgear. In theory, it should let you to explore Distortion Zones without dying. We understand that rebirth is not completely free for you, after all. It's still just a prototype, of course... but I really hope it helps you get out of there alive and... mostly intact. Good luck!",
+  "char_len": 322,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "君には保護ヘッドギアのフィールドテストもしてもらう。理論上は、これで歪みゾーンを死なずに探索できるはずだ。君にとって“再生”が完全に無害ではないことは理解しているからな。もちろん、これはまだ試作品だが…君が生きて、そして…ほぼ無傷で戻ってくれることを願っている。幸運を祈る！"
+  ]
+ },
+ {
+  "source_id": "adf7aba0a90166f4",
+  "source": "A device designed to contain unstable Artifacts. Holds one unit. Updated version not subject to the altering effects of its contents.",
+  "char_len": 133,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "不安定なアーティファクトを収容するために設計された装置。1つのアーティファクトを保持可能。内容物の変質効果を受けない改良版。"
+  ]
+ },
+ {
+  "source_id": "ae62ccbd730a26a9",
+  "source": "Gun Cleaning",
+  "char_len": 12,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Чистка оружия"
+  ],
+  "reference_ja": [
+   "銃の掃除"
+  ]
+ },
+ {
+  "source_id": "aeac965b657aa8a8",
+  "source": "I'll leave a note, so you remember our plan... Aaand... done!",
+  "char_len": 61,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Найти артефакт"
+  ],
+  "reference_ja": [
+   "メモを残しておくよ、俺たちの計画を忘れないように… よし、完了！"
+  ]
+ },
+ {
+  "source_id": "b0ea770fbe4244d7",
+  "source": "Sector of the Radius recreating the nature around the former Pechorsk with a few old dachas.",
+  "char_len": 92,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Область Радиуса, воссоздающая природу вокруг бывшего Печорска с несколькими старыми дачами."
+  ],
+  "reference_ja": [
+   "旧ペチョルスク周辺の自然といくつかの古いダーチャを再現したRadius内のセクター。"
+  ]
+ },
+ {
+  "source_id": "b125a3046b42f875",
+  "source": "Body View",
+  "char_len": 9,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Вид тела"
+  ],
+  "reference_ja": [
+   "ボディビュー"
+  ]
+ },
+ {
+  "source_id": "b16d43a533dad662",
+  "source": "All Explorers must gather at the entry point.",
+  "char_len": 45,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "全探索者は集合地点に集まらなければならない。"
+  ]
+ },
+ {
+  "source_id": "b35a907056ca5ad5",
+  "source": "Kedr Magazine",
+  "char_len": 13,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Магазин Кедр"
+  ],
+  "reference_ja": [
+   "ケドルマガジン"
+  ]
+ },
+ {
+  "source_id": "b475054ccfc11966",
+  "source": "/burden of freedom/",
+  "char_len": 19,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": []
+ },
+ {
+  "source_id": "b51523bfc3d61479",
+  "source": "Check where the strange passage that suddenly appeared leads to.",
+  "char_len": 64,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": []
+ },
+ {
+  "source_id": "b63a3bdecc44539f",
+  "source": "Keep an eye on your weapon and maintain it regularly.",
+  "char_len": 53,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "武器の状態に注意し、定期的に整備すること。"
+  ]
+ },
+ {
+  "source_id": "b640bd00c6761c0c",
+  "source": "Take measurements",
+  "char_len": 17,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставьте контейнеры ООНПС с указанных мест в Лесу.",
+   "Возьмите зажигалку.",
+   "Отключите <b>предохранитель</b> с помощью <b>{BTN_Top}</b>.",
+   "С возвращением, исследователь 73!",
+   "Чтобы поднять предмет с расстояния или с пола – выберите его <b>удерживая {BTN_Trigger} и нажав Захват</b>.",
+   "Здесь исследователи могут получать <b>оружие, снаряжение и припасы</b>, доступные на их <b>уровне безопасности</b> в обмен на кредиты снабжения."
+  ],
+  "reference_ja": [
+   "測定を行う"
+  ]
+ },
+ {
+  "source_id": "bc5eef95de4167c1",
+  "source": "100 buckshot cartridges for IZh-27 and Saiga-12.",
+  "char_len": 48,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "100 патронов дроби для ИЖ-27 и Сайги-12."
+  ],
+  "reference_ja": [
+   "IZh-27 および Saiga-12 用の 100 発のバックスショット カートリッジ。"
+  ]
+ },
+ {
+  "source_id": "bd9a91940780cd19",
+  "source": "Allows holding the gun with both hands for improved accuracy and stability, and enables smooth aiming.\r\nIntegrated foregrip slightly reduces recoil.",
+  "char_len": 148,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Позволяет держать оружие обеими руками для улучшения точности и устойчивости, а также плавного прицеливания.Интегрированная передняя рукоятка немного снижает отдачу."
+  ],
+  "reference_ja": [
+   "両手で銃を握れるため、精度と安定性が向上し、スムーズな照準が可能になります。\r\n一体型フォアグリップにより反動がわずかに軽減されます。"
+  ]
+ },
+ {
+  "source_id": "be60ee4f4851b8d2",
+  "source": "Chocolate Bar",
+  "char_len": 13,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Плитка шоколада"
+  ],
+  "reference_ja": [
+   "チョコレートバー"
+  ]
+ },
+ {
+  "source_id": "bedcb129a45bc503",
+  "source": "Voice Chat & Walkie-talkie",
+  "char_len": 26,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Голосовой чат"
+  ],
+  "reference_ja": [
+   "ボイスチャット"
+  ]
+ },
+ {
+  "source_id": "bf8a443664fa4df3",
+  "source": "Easy Level is a great start for beginners. Master the game with a gentle introduction and less strict conditions. As you gain experience, you can gradually increase the difficulty and tackle bigger challenges.",
+  "char_len": 209,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Легкий уровень – отличное начало для новичков. Освойте игру с мягким введением и менее строгими условиями. По мере набора опыта вы можете постепенно увеличивать сложность и решать более серьезные задачи."
+  ],
+  "reference_ja": [
+   "イージーレベルは初心者にとって最適なスタートです。穏やかな導入と緩やかな条件でゲームをマスターしましょう。経験を積むにつれて、徐々に難易度を上げて、より大きな課題に挑戦できるようになります。"
+  ]
+ },
+ {
+  "source_id": "c0144ee1a9e313c3",
+  "source": "Benelli M2 Grip Stock",
+  "char_len": 21,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Плечевой упор Бенелли М2"
+  ],
+  "reference_ja": [
+   "ベネリM2グリップストック"
+  ]
+ },
+ {
+  "source_id": "c02440387bf0bef6",
+  "source": "Bizon Railed Handguard",
+  "char_len": 22,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Цевье Бизон с рейлами"
+  ],
+  "reference_ja": [
+   "ビゾンレールハンドガード"
+  ]
+ },
+ {
+  "source_id": "c0d0ca1325b248c2",
+  "source": "PM (Makarov Pistol) is a compact, semi-automatic handgun chambered in 9x18. Simple and reliable, it is ideal for self-defense and close-range engagements.",
+  "char_len": 154,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "ПМ (пистолет Макарова) - компактный полуавтоматический пистолет под патрон 9x18. Простой и надежный, идеально подходит для самообороны и боя на короткой дистанции."
+  ],
+  "reference_ja": [
+   "PM（マカロフピストル）は、9×18口径のコンパクトなセミオートハンドガンです。シンプルで信頼性が高く、護身や近距離戦闘に最適です。"
+  ]
+ },
+ {
+  "source_id": "c1fc1ff1b075f19c",
+  "source": "Compact G3 Handguard w/Foregrip",
+  "char_len": 31,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Исследуйте отмеченную область и доставьте чемоданчик. Подготовьтесь к враждебным встречам."
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "c32f090d7e01ac77",
+  "source": "Welcome to the United Nations Pechorsk Special Committee!",
+  "char_len": 57,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "国際連合ペチョルスク特別委員会へようこそ！"
+  ]
+ },
+ {
+  "source_id": "c4921d3323abf72f",
+  "source": "Broken UNPSC Sensor",
+  "char_len": 19,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Сломанный сенсор ООНПС"
+  ],
+  "reference_ja": [
+   "壊れたUNPSCセンサー"
+  ]
+ },
+ {
+  "source_id": "c577c3e2ba84a1a3",
+  "source": "5.45x39 Tracer",
+  "char_len": 14,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "5.45x39 Трассирующие"
+  ],
+  "reference_ja": [
+   "5.45x39 トレーサー"
+  ]
+ },
+ {
+  "source_id": "c67a504e2168c299",
+  "source": "Abyss Island",
+  "char_len": 12,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "アビス島"
+  ]
+ },
+ {
+  "source_id": "c7e308d6b659ade6",
+  "source": "Use <b>Brush and Oil</b> to repair <b>Severe Damage.</b>",
+  "char_len": 56,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [
+   "</b>",
+   "<b>"
+  ],
+  "reference_ru": [
+   "Используйте <b>Щетку и масло</b> для ремонта <b>Серьезного повреждения.</b>"
+  ],
+  "reference_ja": [
+   "<b>ブラシとオイル</b>を使用して<b>深刻な損傷</b>を修復します。"
+  ]
+ },
+ {
+  "source_id": "c9ddafdcc539c4d6",
+  "source": "• Audio signal will indicate when an Artifact is nearby.\r\n• Use the indicator's brightness to determine the Artifact's direction.\r\n• Follow the signal's intensity to locate the Artifact.",
+  "char_len": 186,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "• Двигайтесь в направлении, где сигнал становится сильнее – он ведет к Артефакту."
+  ],
+  "reference_ja": [
+   " -  アーティファクトが近くにあると音声信号で知らせる。\r\n -  インジケーターの明るさでアーティファクトの方向を判断する。\r\n -  信号の強さを追ってアーティファクトを特定する。"
+  ]
+ },
+ {
+  "source_id": "cad6fb995fdb06bf",
+  "source": "Reach the shelter",
+  "char_len": 17,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "cae29a3a9b93dd50",
+  "source": "Canned Beef Chunk",
+  "char_len": 17,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "コンビーフチャンク缶"
+  ]
+ },
+ {
+  "source_id": "cb300bfd1aac5e39",
+  "source": "Jammed! Pull the charging handle!",
+  "char_len": 33,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Заклинило! Потяните за затвор!"
+  ],
+  "reference_ja": [
+   "詰まった！チャージングハンドルを引いてください！"
+  ]
+ },
+ {
+  "source_id": "d0f6e2146d476cc6",
+  "source": "Altered Sugar Bowl",
+  "char_len": 18,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "変異したシュガーボウル"
+  ]
+ },
+ {
+  "source_id": "d102bf998c1ff351",
+  "source": "A note with encrypted message left in the Radius. Sender and recipient are unknown.",
+  "char_len": 83,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставьте измененные объекты в терминал на Объекте 27."
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "d1c6def9893d2707",
+  "source": "Explorers' Legends",
+  "char_len": 18,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Найти артефакт"
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "d52b61f69fcb029b",
+  "source": "Inert Artifact A059",
+  "char_len": 19,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Инертный артефакт A059"
+  ],
+  "reference_ja": [
+   "不活性アーティファクト A059"
+  ]
+ },
+ {
+  "source_id": "d57efc61a75109e8",
+  "source": "You need to prepare and find a way there.",
+  "char_len": 41,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Вам нужно подготовиться и найти способ туда добраться."
+  ],
+  "reference_ja": [
+   "準備をしてそこへ行く方法を見つける必要があります。"
+  ]
+ },
+ {
+  "source_id": "d673d29722b091b6",
+  "source": "My grandma was born on one of these islands. She used to tell me stories about the local fishermen. Some more believable than others. The one I still remember was about my great-grandfather and his friends deciding to smuggle alcohol across the Finnish border. Almost got caught by border patrol on their very first try, so they quickly gave up that idea and went back to fishing. I wish I could've spent more time with her... I bet she had a lot more to tell.",
+  "char_len": 460,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставьте чемоданчик в терминал на Объекте 27."
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "d773d3a275812410",
+  "source": "Riser Rail",
+  "char_len": 10,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Повышающий рейл"
+  ],
+  "reference_ja": [
+   "ライザーレール"
+  ]
+ },
+ {
+  "source_id": "d8e27b62c9eac0ee",
+  "source": "Honestly, we don't know what lies that deep within the Pechorsk Anomaly. Explorer 61 was the only one ever confirmed to have made it that far, and... vanished without a trace. So... I know you can do this and make it back. But... I'm scared for you... Please, be careful... and come back, Explorer 73...",
+  "char_len": 303,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Исследуйте Радиус и найдите измененные объекты."
+  ],
+  "reference_ja": [
+   "正直なところ、ペチョルスク異常のあそこまで深い場所に何があるのか、私たちは知らない。探索者61だけがそこまで到達したと確認されているが…跡形もなく消えた。だから…君ならできるし、戻ってこられると信じている。でも…怖いんだ…どうか気をつけて…戻ってきてくれ、探索者73…"
+  ]
+ },
+ {
+  "source_id": "d917c7b20d8c75a2",
+  "source": "Medications",
+  "char_len": 11,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "医薬品"
+  ]
+ },
+ {
+  "source_id": "d9340a3b98cb7bfb",
+  "source": "You even tried to find Eva once. But you couldn't.",
+  "char_len": 50,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "君は一度エヴァを探そうとした。だができなかった/誰も許さなかった/."
+  ]
+ },
+ {
+  "source_id": "da22ca99fec3850c",
+  "source": "Allows fitting the Bizon, Vityaz, Saiga-12 or AKS-74U with AR buttstocks.\r\nMakes buttstocks foldable.",
+  "char_len": 101,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Позволяет устанавливать Бизон, Витязь, Сайгу-12 или АКС-74У с прикладами АР.Делает приклады складными."
+  ],
+  "reference_ja": [
+   "ビゾン、ヴィチャズ、サイガ-12、AKS-74U に AR バットストックを装着可能にする。\r\nバットストックを折りたためるようにする。"
+  ]
+ },
+ {
+  "source_id": "da33e1b7e0c4eae1",
+  "source": "Construction",
+  "char_len": 12,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "建設現場"
+  ]
+ },
+ {
+  "source_id": "dd1d44eb7d490ff7",
+  "source": "Reliable selective-fire assault rifle chambered in 5.45x39.\r\nThis modified version has improved durability and smoother recoil.",
+  "char_len": 127,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Надежная автоматическая винтовка с селективной стрельбой под патрон 5.45x39.Эта модифицированная версия имеет улучшенную прочность и более плавную отдачу."
+  ],
+  "reference_ja": [
+   "5.45x39 口径の信頼性の高いセレクティブ ファイア アサルト ライフルです。\r\nこの改良型は耐久性が向上し、反動がよりスムーズになりました。"
+  ]
+ },
+ {
+  "source_id": "ddd34ed64052c9af",
+  "source": "Spray Paint (White)",
+  "char_len": 19,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "スプレーペイント（ホワイト）"
+  ]
+ },
+ {
+  "source_id": "dec357964fc54b8f",
+  "source": "Mission Completion Procedure",
+  "char_len": 28,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Процедура завершения миссии"
+  ],
+  "reference_ja": [
+   "ミッション完了手順"
+  ]
+ },
+ {
+  "source_id": "e30d9119d907341b",
+  "source": "Use the flashlight to get through this section.",
+  "char_len": 47,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "この区画を進むためにフラッシュライトを使用すること。"
+  ]
+ },
+ {
+  "source_id": "e3b25389bdcbcefc",
+  "source": "ACPF-07 Probe",
+  "char_len": 13,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Зонд АЦПФ-07"
+  ],
+  "reference_ja": [
+   "ACPF-07プローブ"
+  ]
+ },
+ {
+  "source_id": "e43f20718611208c",
+  "source": "Mod. Bizon",
+  "char_len": 10,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Мод. Бизон"
+  ],
+  "reference_ja": [
+   "バイソンモデル"
+  ]
+ },
+ {
+  "source_id": "e684ca84f6cf19cf",
+  "source": "Telescopic sight with medium magnification.\r\nOnly for regular and Compact G3.",
+  "char_len": 77,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставить артефакты"
+  ],
+  "reference_ja": [
+   "プレースホルダーテキスト"
+  ]
+ },
+ {
+  "source_id": "e7e63024b48fbe77",
+  "source": "Mosin-Nagant 9x Cartridge Belt (R)",
+  "char_len": 34,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Пояс патронов 9x (П) для Мосина-Нагана"
+  ],
+  "reference_ja": [
+   "モシン・ナガン 9x カートリッジベルト (R)"
+  ]
+ },
+ {
+  "source_id": "e8676bb9e1b0f9c7",
+  "source": "Mosin-Nagant Stripper Clip",
+  "char_len": 26,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Обойма Мосина-Нагана"
+  ],
+  "reference_ja": [
+   "モシン・ナガン ストリッパークリップ"
+  ]
+ },
+ {
+  "source_id": "e89c302f3a909c0b",
+  "source": "Congratulations! Now you have access\r\nto more crucial Missions in more areas of the Pechorsk Anomaly, and better equipment at the Supply Depot.",
+  "char_len": 143,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Поздравляем! Теперь у вас есть доступк более важным миссиям в большем количестве областей аномалии Печорск, а также к лучшему оборудованию в пункте снабжения."
+  ],
+  "reference_ja": [
+   "おめでとうございます！これで、ペチョルスク異常地帯のより多くのエリアで、より重要なミッションに参加できるようになり、補給所ではより良い装備が手に入ります。"
+  ]
+ },
+ {
+  "source_id": "e972bf3638900fbe",
+  "source": "Connections established...",
+  "char_len": 26,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "接続が確立された…"
+  ]
+ },
+ {
+  "source_id": "ea18516a9a442b70",
+  "source": "Microphone Volume",
+  "char_len": 17,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Громкость микрофона"
+  ],
+  "reference_ja": [
+   "マイクの音量"
+  ]
+ },
+ {
+  "source_id": "eac6ccc8f9bbe871",
+  "source": "G36 Old Medium Handguard",
+  "char_len": 24,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Старое среднее цевье G36"
+  ],
+  "reference_ja": [
+   "G36 旧型中型ハンドガード"
+  ]
+ },
+ {
+  "source_id": "ebae8597cb88a197",
+  "source": "Modified OTs-14 Groza",
+  "char_len": 21,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Модифицированная ОЦ-14 Гроза"
+  ],
+  "reference_ja": [
+   "改良型OTs-14 Groza"
+  ]
+ },
+ {
+  "source_id": "f05b60f223cbed05",
+  "source": "Ration",
+  "char_len": 6,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Паек"
+  ],
+  "reference_ja": [
+   "配給"
+  ]
+ },
+ {
+  "source_id": "f05d9d230df90913",
+  "source": "Old Plate",
+  "char_len": 9,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Старая тарелка"
+  ],
+  "reference_ja": [
+   "古いプレート"
+  ]
+ },
+ {
+  "source_id": "f0879fc2128d963e",
+  "source": "Explorer Starter Kit (issued during Explorer Basic Training Course)",
+  "char_len": 67,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "探索者スターターキット（探索者基礎訓練コース中に支給）"
+  ]
+ },
+ {
+  "source_id": "f0e74593b8c50087",
+  "source": "Pantry Box Artifact",
+  "char_len": 19,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "パントリーボックス・アーティファクト"
+  ]
+ },
+ {
+  "source_id": "f113c7aa2ee85ea0",
+  "source": "Find 3 elevator buttons",
+  "char_len": 23,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "エレベーターボタンを3つ見つける"
+  ]
+ },
+ {
+  "source_id": "f5bc27676c125b45",
+  "source": "M4A1 Medium Barrel",
+  "char_len": 18,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Средний ствол М4А1"
+  ],
+  "reference_ja": [
+   "M4A1 中砲身"
+  ]
+ },
+ {
+  "source_id": "f5ce840f14b862a2",
+  "source": "AS Val Handguard",
+  "char_len": 16,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "AS Val ハンドガード"
+  ]
+ },
+ {
+  "source_id": "f716be7325737d9d",
+  "source": "Place another Amplifier on the marked spot.",
+  "char_len": 43,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Доставка оборудования"
+  ],
+  "reference_ja": [
+   "指定地点にアンプをもう一つ設置する。"
+  ]
+ },
+ {
+  "source_id": "f795246fa7924bfe",
+  "source": "Scientific examination...",
+  "char_len": 25,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "科学的検査は…"
+  ]
+ },
+ {
+  "source_id": "f8310ddd91cba022",
+  "source": "Only Backpack",
+  "char_len": 13,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [
+   "Только рюкзак"
+  ],
+  "reference_ja": [
+   "バックパックのみ"
+  ]
+ },
+ {
+  "source_id": "f84b26eec709c651",
+  "source": "/a predictable species/",
+  "char_len": 23,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": []
+ },
+ {
+  "source_id": "fc88f5068aef6133",
+  "source": "Locate and collect\r\nthe specified items",
+  "char_len": 39,
+  "translatable": true,
+  "containers": [
+   "EnglishSource.uasset"
+  ],
+  "placeholders": [],
+  "reference_ru": [],
+  "reference_ja": [
+   "指定されたアイテムを探して回収する"
+  ]
+ }
+]

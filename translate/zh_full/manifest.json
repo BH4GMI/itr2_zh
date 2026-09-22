@@ -1,0 +1,86 @@
+[
+ {
+  "chunk": 0,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_00.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_00.json",
+  "count": 200,
+  "chars": 12805
+ },
+ {
+  "chunk": 1,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_01.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_01.json",
+  "count": 200,
+  "chars": 12570
+ },
+ {
+  "chunk": 2,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_02.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_02.json",
+  "count": 200,
+  "chars": 12136
+ },
+ {
+  "chunk": 3,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_03.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_03.json",
+  "count": 200,
+  "chars": 12058
+ },
+ {
+  "chunk": 4,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_04.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_04.json",
+  "count": 200,
+  "chars": 11896
+ },
+ {
+  "chunk": 5,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_05.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_05.json",
+  "count": 199,
+  "chars": 11816
+ },
+ {
+  "chunk": 6,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_06.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_06.json",
+  "count": 199,
+  "chars": 11715
+ },
+ {
+  "chunk": 7,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_07.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_07.json",
+  "count": 199,
+  "chars": 11677
+ },
+ {
+  "chunk": 8,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_08.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_08.json",
+  "count": 199,
+  "chars": 11626
+ },
+ {
+  "chunk": 9,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_09.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_09.json",
+  "count": 199,
+  "chars": 11585
+ },
+ {
+  "chunk": 10,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_10.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_10.json",
+  "count": 199,
+  "chars": 11540
+ },
+ {
+  "chunk": 11,
+  "input": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\chunk_11.json",
+  "output": "D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\translate\\zh_full\\zh_11.json",
+  "count": 199,
+  "chars": 11498
+ }
+]

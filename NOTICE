@@ -1,0 +1,49 @@
+ITR2 Chinese Patch（Into the Radius 2 简体中文补丁）
+Copyright 2026 The ITR2 Chinese Patch Authors
+
+本产品依据 Apache License, Version 2.0 授权（许可证全文见 LICENSE）。
+
+--------------------------------------------------------------------------
+一、本产品对上游内容所作的修改
+
+本项目基于下列第三方内容生成简体中文本地化资源，并作出如下修改：
+
+1. 语言资源：将英文原文翻译为简体中文，并重新构建 Unreal 本地化资源
+   （Game.locres，含 EnglishSource 命名空间合并）与 EnglishSource.uasset 补丁数据。
+2. 字体资源：从游戏自带的 Noto Sans SC 字体资源中提取字形数据，构建界面字体覆盖文件。
+3. 未使用上游项目的任何译文；未复制上游项目的源代码；未随本产品分发上游项目的数据文件。
+
+--------------------------------------------------------------------------
+二、第三方内容与许可
+
+1. refracta/itr2-ko（参考项目）
+   本项目在构建阶段引用该项目所整理的 Unreal IoStore 容器字节格式常量、
+   哈希算法说明与资源位置索引，用于生成同等格式的简体中文资源。
+   该项目未声明任何许可证。本项目不分发其源代码与数据文件，
+   详细说明与依赖范围见 THIRD-PARTY.md。
+
+2. Noto Sans SC（字体）
+   以 SIL Open Font License 1.1 授权，版权声明与许可全文见
+   licenses/OFL-NotoSansSC.txt。依该许可要求，本产品随附完整许可证文本，
+   且不得单独销售字体本身。
+
+3. Python 依赖（仅用于构建，不随本产品分发）
+   pyuepak（MIT License）、cityhash（MIT License）、
+   cryptography（Apache License 2.0 或 BSD 3-Clause License）。
+
+4. Unreal Engine 文件格式（Epic Games, Inc.）
+   本项目仅依据公开的 IoStore / Pak 文件格式规格实现读写，
+   不包含 Epic Games, Inc. 的任何代码。
+
+5. Oodle 数据压缩运行库（Epic Games / RAD Game Tools）
+   本项目及其发布产物均不包含该运行库。自建的 IoStore 容器采用未压缩存储
+   （compression method 0），解压由游戏程序自身完成。
+
+--------------------------------------------------------------------------
+三、游戏资源与商标
+
+《Into the Radius 2》的原始资源（本地化资源、字体资源及其它游戏数据）版权归
+CM Games 所有。《Into the Radius》及相关名称为其各自权利人的商标。
+
+本项目为爱好者制作的非官方本地化补丁，与 CM Games 无从属关系，亦未获其背书，
+不得用于商业用途。

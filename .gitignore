@@ -1,0 +1,44 @@
+# 大文件 / 派生产物（不入库，可由脚本重新生成）
+raw/
+iostore_out/
+fonts/
+dist_zh/
+release_zh/
+archive/
+scratch/
+*.pak
+*.ucas
+*.utoc
+*.ttf
+*.otf
+*.locres
+*.locmeta
+*.uasset
+*.uasset.raw
+records_with_zh.json
+todo_sources.json
+font_report.json
+progress_report.md
+
+# 压缩包默认不入库，但交付给玩家的发布包必须随仓库保存
+*.zip
+!ITR2_Chinese_v2.zip
+
+# 外部参考项目（未声明 LICENSE，不随本仓库分发；用 README 里的 git clone 获取）
+ref_ko/
+
+# 运行环境
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+
+# Python 中间数据
+*.pkl

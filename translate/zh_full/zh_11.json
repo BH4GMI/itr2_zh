@@ -1,0 +1,798 @@
+[
+ {
+  "source_id": "01211154cebb27bb",
+  "zh": "喷漆（深橙色）"
+ },
+ {
+  "source_id": "01a65c38c5ed2eab",
+  "zh": "VOG-25 手榴弹"
+ },
+ {
+  "source_id": "01de5e184597c763",
+  "zh": "正在连接 UNPSC 总部服务器……"
+ },
+ {
+  "source_id": "025cc9659182da3f",
+  "zh": "UNPSC 扭曲传感器"
+ },
+ {
+  "source_id": "028f3a36552dc69c",
+  "zh": "将展开后的扭曲传感器放置在最后一个标记点上。"
+ },
+ {
+  "source_id": "03825ebeb4c1e7a9",
+  "zh": "Bizon 防尘盖"
+ },
+ {
+  "source_id": "03b643b39ad99af2",
+  "zh": "挎包"
+ },
+ {
+  "source_id": "0b400d514407447b",
+  "zh": "AS Val 导轨枪管"
+ },
+ {
+  "source_id": "0d8397cf6932e85b",
+  "zh": "7.62x54R FMJ 弹药大盒"
+ },
+ {
+  "source_id": "0ea8ca33c3bccd3c",
+  "zh": "安全等级 5 臂章"
+ },
+ {
+  "source_id": "0ef9895e231a318d",
+  "zh": "高亮显示掉落物品"
+ },
+ {
+  "source_id": "0f59980f43491c23",
+  "zh": "就是这里。它能让你免受潮汐和敌人的伤害。就像异常之中套着另一个异常。这是半径里仅存的正常地方。至少我们过去生活的一小部分还留在这里……好，我会把其他避难所标在你的地图上，这样你更容易找到它们……"
+ },
+ {
+  "source_id": "11238706f9ee7987",
+  "zh": "对磨损的影响"
+ },
+ {
+  "source_id": "1169bebafbf455b6",
+  "zh": "存放的 IZh-27 说明"
+ },
+ {
+  "source_id": "1242794eddbdd7b3",
+  "zh": "冲锋枪"
+ },
+ {
+  "source_id": "12d5c936eb607dc6",
+  "zh": "/真是……毫无灵感/"
+ },
+ {
+  "source_id": "12efdcc032317af4",
+  "zh": "抵达中心"
+ },
+ {
+  "source_id": "131260cbfbb0c821",
+  "zh": "音乐"
+ },
+ {
+  "source_id": "14579ff03b10adc7",
+  "zh": "请为期望的玩家数量选择难度预设，并设置难度等级。"
+ },
+ {
+  "source_id": "14c52d26daf1a246",
+  "zh": "……而似乎没人在意，除了她……"
+ },
+ {
+  "source_id": "16f9ae5a09669e06",
+  "zh": "将放大器放置在半径内标记的位置上。"
+ },
+ {
+  "source_id": "17d0bfdcbb905f9e",
+  "zh": "购买物品"
+ },
+ {
+  "source_id": "18698d9357bc49c0",
+  "zh": "无法完成"
+ },
+ {
+  "source_id": "196e1f0cb0f922a5",
+  "zh": "可双手握持以提升精度与稳定性，并实现顺畅瞄准。\r\n带有配件导轨。\r\n仅适用于 M4A1 内导气块。"
+ },
+ {
+  "source_id": "1c23b29cfa0e644a",
+  "zh": "Kedr 护木导轨"
+ },
+ {
+  "source_id": "1ca3ca976c9ce241",
+  "zh": "单目 NVD 支架"
+ },
+ {
+  "source_id": "1d64b5dba0d912a5",
+  "zh": "决定由谁来接受金色球体。其余一切都将被清除……"
+ },
+ {
+  "source_id": "1da5b0b8b648062b",
+  "zh": "将其安装到任意 IZh-27 枪托上。"
+ },
+ {
+  "source_id": "1f5a1abf2f08ec18",
+  "zh": "完成"
+ },
+ {
+  "source_id": "20770554c8961543",
+  "zh": "你自己"
+ },
+ {
+  "source_id": "20ed67719d8a9f76",
+  "zh": "9x19 曳光弹弹药盒"
+ },
+ {
+  "source_id": "21fda145d98d68f1",
+  "zh": "/幸存者的负罪感/"
+ },
+ {
+  "source_id": "22175a69ea98653b",
+  "zh": "Remington 700 枪托"
+ },
+ {
+  "source_id": "228fc8625a3e9503",
+  "zh": "副武器枪套（右）"
+ },
+ {
+  "source_id": "22a32267d1af37da",
+  "zh": "转向输入阈值"
+ },
+ {
+  "source_id": "25bc96295797b537",
+  "zh": "分析"
+ },
+ {
+  "source_id": "2697d4eee468670d",
+  "zh": "如果遇到任何问题或错误，\r\n请随时向我们反馈："
+ },
+ {
+  "source_id": "2aa5d413af827680",
+  "zh": "30 发普通弹药，适用于 PM、PP-19、PP-91 和 Fort-17。"
+ },
+ {
+  "source_id": "2ba061c7d3aadac3",
+  "zh": "小型弹匣袋"
+ },
+ {
+  "source_id": "2ba4d9664e276d92",
+  "zh": "正在下载更新："
+ },
+ {
+  "source_id": "2c5c353e4e3e3a03",
+  "zh": "使用 <b>{BTN_Bottom}</b> + <b>{BTN_Trigger}</b> 切换枪械配件或头灯。"
+ },
+ {
+  "source_id": "2d9063dae3349381",
+  "zh": "毒气伤害"
+ },
+ {
+  "source_id": "2f15e9a650d45861",
+  "zh": "/以及更多疑问/"
+ },
+ {
+  "source_id": "303f5749a872454a",
+  "zh": "<b>{BTN_Sprint}</b> 切换<b>冲刺</b>。"
+ },
+ {
+  "source_id": "351d42bd750eb672",
+  "zh": "我们来打通一条通往中心附近区域的路。看来这地方不在乎物理法则。地面全都碎裂了。你得又跳又爬才能过去。眼睛放亮点。这里不止我们。还有，千万别掉下去。我保证下面什么都没有……"
+ },
+ {
+  "source_id": "36ac0c56e15a5f5f",
+  "zh": "敬礼回应"
+ },
+ {
+  "source_id": "36b45356276da971",
+  "zh": "没有弹药！给步枪装弹\r\n并拉动拉机柄！"
+ },
+ {
+  "source_id": "36b8c5747798c5f7",
+  "zh": "AS Val 导轨护木"
+ },
+ {
+  "source_id": "37096a6a645f8d11",
+  "zh": "哦，差点忘了！别被潮汐卷进去！一旦你的平板开始大声鸣叫——立刻离开半径！我知道死亡对你来说不是终点，但还是……那不会好受。祝你好运！"
+ },
+ {
+  "source_id": "3bd98b4531ab2629",
+  "zh": "将其安装到莫辛-纳甘枪托的右侧。"
+ },
+ {
+  "source_id": "3dd477f558c2f413",
+  "zh": "手续费用"
+ },
+ {
+  "source_id": "3ddb4433fd9e31fc",
+  "zh": "存在体"
+ },
+ {
+  "source_id": "3fa372dbf163dad5",
+  "zh": "委员会的探索者们在这些基地生活和工作。"
+ },
+ {
+  "source_id": "4050c01ea3532c73",
+  "zh": "听着，我很抱歉。我甚至无法想象那是什么感觉——突然发现自己身处未来，你曾拥有的一切……都成了过去……然后还因为某个测试被炸死。总之，你通过了评估。那样的事不会再发生了。"
+ },
+ {
+  "source_id": "42fd1162fc836de8",
+  "zh": "一套用于棋盘游戏的经典白色跳棋。"
+ },
+ {
+  "source_id": "43c357bae8d1647b",
+  "zh": "Kochetov 镜座顶部导轨"
+ },
+ {
+  "source_id": "43fc7676a655b089",
+  "zh": "保护枪管。\r\n可加装配件导轨。\r\n仅适用于 Remington 700。"
+ },
+ {
+  "source_id": "47e835cf60f52b8a",
+  "zh": "适用于任何防弹背心的中量插板。\r\n降低受到的伤害。\r\n受到伤害时会逐渐损耗。"
+ },
+ {
+  "source_id": "4a223886a5129184",
+  "zh": "潮汐伤害"
+ },
+ {
+  "source_id": "4aaf9bf922ba8337",
+  "zh": "领取 TED"
+ },
+ {
+  "source_id": "4ac2ce1429ef491e",
+  "zh": "出售物品"
+ },
+ {
+  "source_id": "4acd441176cd8c5b",
+  "zh": "M4A1 弹匣"
+ },
+ {
+  "source_id": "4aef67104ee4f771",
+  "zh": "与 M4A1 前准星配合使用时可实现精确瞄准。\r\n可安装到任意导轨上。"
+ },
+ {
+  "source_id": "4c83cd20f7ed96a4",
+  "zh": "我小时候很喜欢来这里。那可是难得的享受！有些周末，米沙叔叔和列娜阿姨会开着他们那辆红色“莫斯科人”来接我们，带我们来这儿。妈妈总会给我买冰淇淋，这样我就不会闹脾气。我们会提着大包小包回家，像过年一样大吃特吃。那时候让我们开心，真不需要多少东西，对吧？"
+ },
+ {
+  "source_id": "4dfe106ce873fc2f",
+  "zh": "异变扳手"
+ },
+ {
+  "source_id": "4efa95507c2d6abc",
+  "zh": "• 用空着的手<b>按下 {BTN_Trigger}</b>并拉开顶盖。\r\n• 将门神器放入装置。\r\n• <b>长按 {BTN_Trigger}</b>以激活门神器。"
+ },
+ {
+  "source_id": "4faf4f944ddb6e57",
+  "zh": "将特殊神器送到设施。"
+ },
+ {
+  "source_id": "50e66e63cb74791f",
+  "zh": "FAST 头盔（带 NVD 罩座）"
+ },
+ {
+  "source_id": "5313b70b289ae2d9",
+  "zh": "风暴兵拟态怪"
+ },
+ {
+  "source_id": "53307b3ce42b01f1",
+  "zh": "复活"
+ },
+ {
+  "source_id": "59da579c247b4d3b",
+  "zh": "可将平板挂在胸挂、背心或背包上的支架。"
+ },
+ {
+  "source_id": "59e6cfa4f4495023",
+  "zh": "响度"
+ },
+ {
+  "source_id": "5a5b9e6819b4d373",
+  "zh": "戴上腕带"
+ },
+ {
+  "source_id": "5aa622e2c05dd32b",
+  "zh": "莫辛-纳甘顶部导轨"
+ },
+ {
+  "source_id": "5aaa3119ca60e322",
+  "zh": "9x39 曳光弹"
+ },
+ {
+  "source_id": "5b4afb2ebb0ae3f6",
+  "zh": "100 发曳光弹，适用于 SVD。"
+ },
+ {
+  "source_id": "5ce1fe5c6133ce6a",
+  "zh": "AK-74 握把"
+ },
+ {
+  "source_id": "5d47f9b8bfbe4e2e",
+  "zh": "探索者制服"
+ },
+ {
+  "source_id": "6071aa8dbf5c9903",
+  "zh": "获取指南针神器"
+ },
+ {
+  "source_id": "6152d5e9c40e5992",
+  "zh": "Saiga-12 旧式长枪管"
+ },
+ {
+  "source_id": "6196369feab38bd4",
+  "zh": "用于清洁枪管内部。"
+ },
+ {
+  "source_id": "61f985f0387dc5f3",
+  "zh": "找到通往新区域的路，并将设备放置在标记点上。"
+ },
+ {
+  "source_id": "6588d1a529ff9d12",
+  "zh": "耐久度越低，武器性能越差，故障概率越高。"
+ },
+ {
+  "source_id": "674f8c8246a11526",
+  "zh": "爬行怪物"
+ },
+ {
+  "source_id": "6869d4d46c35c9f4",
+  "zh": "使用 7.62x39 弹药的选射突击步枪。\r\n此改进型拥有更好的耐久度和更平顺的后坐力。"
+ },
+ {
+  "source_id": "688fd398e21b8296",
+  "zh": "给你。"
+ },
+ {
+  "source_id": "6a216bc874b23e5d",
+  "zh": "勺子神器"
+ },
+ {
+  "source_id": "6b97b1a493f67a54",
+  "zh": "• 将装好的弹夹从上方压入莫辛-纳甘步枪，并把弹药向下推入内置弹仓。\r\n• 用空着的手按 <b>{BTN_Grip}</b> 取下。"
+ },
+ {
+  "source_id": "6bb58c2c0b4f19ed",
+  "zh": ".45 ACP 曳光弹弹药盒"
+ },
+ {
+  "source_id": "6c4cfa534b452051",
+  "zh": "适用于各类瞄准镜的放大镜。不使用时向左翻折。\r\n可安装到任意导轨上与瞄准镜配合使用。"
+ },
+ {
+  "source_id": "6cb91410d0f4e6c0",
+  "zh": "在标记点找到样本容器。"
+ },
+ {
+  "source_id": "6e2ed04a1584b4db",
+  "zh": "这是探索者平板。它包含地图、已接任务列表、内置照明，以及载有实用信息的探索者手册。看一下，然后随身带上。"
+ },
+ {
+  "source_id": "6e950df75115af81",
+  "zh": "从标记的异常簇中取得并送达 2 个神器。"
+ },
+ {
+  "source_id": "7360b50ff513376f",
+  "zh": "SVD 护木"
+ },
+ {
+  "source_id": "7398077930ee1266",
+  "zh": "卸下弹匣"
+ },
+ {
+  "source_id": "73a085e9fe89582c",
+  "zh": "检查受试者"
+ },
+ {
+  "source_id": "74dfb579c8f091f3",
+  "zh": "5.45x39 BP 弹药盒"
+ },
+ {
+  "source_id": "75b3b8b13f3b7581",
+  "zh": "<b>长按 {BTN_Trigger}</b>以准备探针。\r\n<b>挥动手臂并松开扳机</b>投掷。"
+ },
+ {
+  "source_id": "7648343d66b197b9",
+  "zh": "这在意料之中。我们将为这次选择引入一个外部因素。"
+ },
+ {
+  "source_id": "78bb6899421ebcb6",
+  "zh": "30 发曳光弹，适用于 Beretta、Glock 和 MP9。"
+ },
+ {
+  "source_id": "796997f60fab3bb6",
+  "zh": "• <b>按下 {BTN_Trigger}</b>以打开或关闭。\r\n• 使用<b>高级神器探测器</b>定位并显现隐形巢穴中的不稳定神器。\r\n• 迅速将神器放入容器以固定住它。"
+ },
+ {
+  "source_id": "7ac3f9e22740a3a3",
+  "zh": "6 发弹药袋"
+ },
+ {
+  "source_id": "7b134730f57b0ac7",
+  "zh": "领取高级神器探测器"
+ },
+ {
+  "source_id": "7cf2bae3de6e9e74",
+  "zh": "改装 PM"
+ },
+ {
+  "source_id": "7e329aa50fe81444",
+  "zh": "莫辛-纳甘固定弹仓"
+ },
+ {
+  "source_id": "7ed4e954ea41fff8",
+  "zh": "我们拿到了！别错过机会！机不可失……"
+ },
+ {
+  "source_id": "8132a3caafb04d56",
+  "zh": "• 在用刷子清洁枪械或枪械部件之前，<b>按下 {BTN_Trigger}</b>将油喷在其上。"
+ },
+ {
+  "source_id": "83a31af41224384a",
+  "zh": "Saiga-12 小容量弹匣"
+ },
+ {
+  "source_id": "8455deefda5eb27c",
+  "zh": "将展开后的扭曲传感器放置在第二个标记点上。"
+ },
+ {
+  "source_id": "862cf5211a069d18",
+  "zh": "可将枪托抵肩，提升精度并降低后坐力。\r\n长度可调，带来最大舒适度。\r\n仅适用于普通型和紧凑型 G3。"
+ },
+ {
+  "source_id": "86c5f7a3202f85e7",
+  "zh": "现在，面对后果吧。"
+ },
+ {
+  "source_id": "873af51f0054bcbe",
+  "zh": "关于当前版本的重要说明：\r\n• PSVR2 免责声明文本\r\n\r\n<b>更新 1.1.2 要点：</b>\r\n• PSVR2 要点文本"
+ },
+ {
+  "source_id": "883bd77b6575e6ae",
+  "zh": "AKM 枪管"
+ },
+ {
+  "source_id": "895134f86ec7ed57",
+  "zh": "欢迎回来！我不知道你是怎么做到的，但你成功了！我听说有些探索者在这样的任务中会依靠脑海里的声音。听起来很疯狂，但在我们了解了半径的一切之后，已经没什么能让我惊讶了……这个新区域更靠近佩乔尔斯克异常的中心。它更奇异，对我们的研究也更有价值。我已经为研究它安排好了一整套计划！不过现在你还没准备好接下下一个最高优先级任务。但你应该能通过支线任务快速积累经验。祝你好运，探索者 73！"
+ },
+ {
+  "source_id": "8d6b52e2732ecaab",
+  "zh": "RGN 手榴弹"
+ },
+ {
+  "source_id": "8fcd25a39d203718",
+  "zh": "与"
+ },
+ {
+  "source_id": "90cb13a3e2c8dee9",
+  "zh": "NVD 头带"
+ },
+ {
+  "source_id": "92c10532f7caeddf",
+  "zh": "真心希望你喜欢这款游戏！"
+ },
+ {
+  "source_id": "96eab097d604eb00",
+  "zh": "• 靠近台钳上的枪械并松开即可安装。\r\n• <b>长按 {BTN_Trigger}</b>并拉动以折叠或展开。\r\n• <b>长按 {BTN_Bottom} + {BTN_Grip}</b>从台钳上的枪械卸下该部件。"
+ },
+ {
+  "source_id": "978da616f59fd935",
+  "zh": "PSG1 瞄准镜"
+ },
+ {
+  "source_id": "981c5ef0247a0482",
+  "zh": "霰弹枪"
+ },
+ {
+  "source_id": "98ba14aec194e7ef",
+  "zh": "你已被识别为……"
+ },
+ {
+  "source_id": "9bb9dc2c32afb12b",
+  "zh": "改装 Glock 18C"
+ },
+ {
+  "source_id": "9c36ffa42cceb834",
+  "zh": "写实"
+ },
+ {
+  "source_id": "9d01eb42b27ca4b9",
+  "zh": "异变挂锁"
+ },
+ {
+  "source_id": "9dc1636634290b14",
+  "zh": "前往中间地带"
+ },
+ {
+  "source_id": "9f8a2f4cad904c77",
+  "zh": "而你……你可能在其中扮演关键角色，就像当年的探索者 61 一样。"
+ },
+ {
+  "source_id": "9fb5605c6e6c92a3",
+  "zh": "带把伞！收音机里说两点会有暴风雨。"
+ },
+ {
+  "source_id": "a014e96da13a8d10",
+  "zh": "好像有点松，不过能用。好。手表已激活，读数正常。"
+ },
+ {
+  "source_id": "a0ab487d4ca3bc7a",
+  "zh": "看看这个！多么疯狂的景象……很迷人，不是吗？沿着这些铁轨越过深渊，然后过桥。我在对面等你。但愿这里不会有火车经过……"
+ },
+ {
+  "source_id": "a0e901018e1a4b12",
+  "zh": "改装 IZh-27"
+ },
+ {
+  "source_id": "a3a01028e0d311ce",
+  "zh": "将传感器放置在不稳定巢穴区域，以限制它的移动。"
+ },
+ {
+  "source_id": "a5326a9efb9d6599",
+  "zh": "请领取应得的报酬："
+ },
+ {
+  "source_id": "a73bd84b10902849",
+  "zh": "将门神器激活器送到设施的终端。"
+ },
+ {
+  "source_id": "aa159c8e8596974c",
+  "zh": "经典 AD-15 探测器"
+ },
+ {
+  "source_id": "aaf4c9eefbd475e1",
+  "zh": "可完全恢复的强力增强剂。"
+ },
+ {
+  "source_id": "ab2518b0a1b4811c",
+  "zh": "存放的 Benelli M2"
+ },
+ {
+  "source_id": "ab4e84f400a1201f",
+  "zh": "Saiga-12 弹匣"
+ },
+ {
+  "source_id": "ad39674932c24517",
+  "zh": "AKM 弹匣"
+ },
+ {
+  "source_id": "ae3d89188ef6c0b5",
+  "zh": "12x70 鹿弹大盒"
+ },
+ {
+  "source_id": "aff83ee8d322141f",
+  "zh": "……不需要。"
+ },
+ {
+  "source_id": "b02942b68a8b90e5",
+  "zh": "M1911 弹匣"
+ },
+ {
+  "source_id": "b09fe98b4bebc287",
+  "zh": "放置放大器"
+ },
+ {
+  "source_id": "b0ff91f5405f40f7",
+  "zh": "物品售价"
+ },
+ {
+  "source_id": "b250fb4f1400397b",
+  "zh": "更新待处理任务列表需要连接 UNPSC 总部服务器。确定要更新待处理任务列表吗？"
+ },
+ {
+  "source_id": "b2ecd3a58a460d3c",
+  "zh": "从终端获取防扭曲头盔原型。"
+ },
+ {
+  "source_id": "b88ea6a228525ef0",
+  "zh": "要打开外部链接吗？"
+ },
+ {
+  "source_id": "bc4684e28fd0f09c",
+  "zh": "哈哈！还记得这个舞台吗？我们的班主任曾让我们加入校合唱团，说是“矫正措施”。我们得在五一庆祝活动上和他们一起唱歌。当然，我们一句歌词都没学！就站在观众面前做鬼脸、假装在唱……然后，前排的人全都开始指着我们。我想我们的音乐生涯那时候就结束了——还没开始就结束了！"
+ },
+ {
+  "source_id": "bd91f4a98eaa163a",
+  "zh": "使用台钳组装或清洁你的枪械。"
+ },
+ {
+  "source_id": "be84b33d45d52e15",
+  "zh": "UNPSC 头灯"
+ },
+ {
+  "source_id": "c0e711fe78909ff7",
+  "zh": "AKM 枪托"
+ },
+ {
+  "source_id": "c24ef8cc33586e96",
+  "zh": "<L1>由灰色、易碎的类灰物质构成。据信是佩乔尔斯克异常的构造材料，用于生成其移动与固定物体。在纯净状态下，对异变体无害。</L1>"
+ },
+ {
+  "source_id": "c26265ff5c9db99f",
+  "zh": "你的安全等级\r\n已提升！"
+ },
+ {
+  "source_id": "c38c92d5cd8e5156",
+  "zh": "5.45x39 FMJ 弹药大盒"
+ },
+ {
+  "source_id": "c458508440df696a",
+  "zh": "异变牙刷"
+ },
+ {
+  "source_id": "c7dd07a3cfc8d8f3",
+  "zh": "一个老旧而沉重的背包，容量不错，并缝有侧袋。\r\n可加装额外的弹药袋、枪套和挂扣。"
+ },
+ {
+  "source_id": "ca00d1c11788f7d4",
+  "zh": "我讨厌这地方！像老电视一样嗡嗡响个不停……伊娃大概又会跟丢你……好吧，和之前一样：你点亮灯盏，我调校你的指南针，你跟着它走，我来清理前方的路。我们得先穿过这片树林。前面有很多“蒲公英”，小心脚下！"
+ },
+ {
+  "source_id": "ca78982db27ccb83",
+  "zh": "F-1 手榴弹"
+ },
+ {
+  "source_id": "cab2839095e0ae85",
+  "zh": "旧糖罐"
+ },
+ {
+  "source_id": "cbe85e632e3a48f3",
+  "zh": "可双手握持以提升精度与稳定性，并实现顺畅瞄准。\r\n带有配件导轨。"
+ },
+ {
+  "source_id": "cd08fe4e74a76fa1",
+  "zh": "PASGT 头盔（带 NVD 罩座）"
+ },
+ {
+  "source_id": "ce03fcb5f46c92db",
+  "zh": "你掉落了一些物品，去把它们收好"
+ },
+ {
+  "source_id": "ce2c8fb662892f9e",
+  "zh": "30 发普通弹药，适用于 M4A1 和 G36。"
+ },
+ {
+  "source_id": "cfc3fd39d2936420",
+  "zh": "UNPSC 弹匣装填器"
+ },
+ {
+  "source_id": "d1b22c970c526f19",
+  "zh": "探索者使用胸挂和背心来携带武器与装备。穿上这副胸挂，并把平板放入指定槽位。"
+ },
+ {
+  "source_id": "d5078559080f0f50",
+  "zh": "向导的避难所"
+ },
+ {
+  "source_id": "d5719d0ee0a32f47",
+  "zh": "反射式瞄准镜"
+ },
+ {
+  "source_id": "d5cb9069391e2707",
+  "zh": "现在一切看起来都正常了。继续游戏吧。"
+ },
+ {
+  "source_id": "d6cdec62de990651",
+  "zh": "打开电梯门"
+ },
+ {
+  "source_id": "d9ac2700692e6187",
+  "zh": "正在解码新指令……"
+ },
+ {
+  "source_id": "d9ebc9a9be4d8c93",
+  "zh": "UNPSC 露营杯"
+ },
+ {
+  "source_id": "db6e7e410412f585",
+  "zh": "保险"
+ },
+ {
+  "source_id": "db7eea1a8f0a396b",
+  "zh": "信号弹"
+ },
+ {
+  "source_id": "dd816df5686c3a44",
+  "zh": "200 发曳光弹，适用于 Beretta、Glock 和 MP9。"
+ },
+ {
+  "source_id": "de8de8b5e55c3232",
+  "zh": "窄视场的单目夜视装置。\r\n可安装到单目 NVD 支架上。"
+ },
+ {
+  "source_id": "df9c2a4d5b11b3b8",
+  "zh": "Benelli M2 照门"
+ },
+ {
+  "source_id": "dfb05cedef91631e",
+  "zh": "敌人"
+ },
+ {
+  "source_id": "e02474c5fed730ea",
+  "zh": "头部锁定"
+ },
+ {
+  "source_id": "e1a8017c30690c52",
+  "zh": "AKS-74U 导轨防尘盖"
+ },
+ {
+  "source_id": "e50cf8178fd2ea96",
+  "zh": "• 将其靠近胸口即可穿上（确保你没有穿着其他制服）。\r\n• <b>按住 {BTN_Bottom} 并按下 Grip</b>可脱下制服。"
+ },
+ {
+  "source_id": "e5af308e2fa18ba7",
+  "zh": "一款手持神器探测器，用于在佩乔尔斯克异常中定位珍贵神器。它发出信号以指示方向和距离。"
+ },
+ {
+  "source_id": "e5e19aaab3825045",
+  "zh": "30 发普通弹药，适用于 AKM 和 SKS。"
+ },
+ {
+  "source_id": "e63a42d76edce96f",
+  "zh": "<L0>侦察背包</L0><L3>远征背包</L3>"
+ },
+ {
+  "source_id": "e9870d7234f66e0e",
+  "zh": "敌人能以视觉发现你的距离。"
+ },
+ {
+  "source_id": "ea6969feaf38c3b3",
+  "zh": "神器 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+ },
+ {
+  "source_id": "ea76827bce65b3bf",
+  "zh": "SKS 枪托转接器"
+ },
+ {
+  "source_id": "eac7288f295f9c95",
+  "zh": "/向导/"
+ },
+ {
+  "source_id": "eccd6a3b00f0460a",
+  "zh": "大幅降低声响并略微补偿后坐力。\r\n仅适用于 SVD、SKS 和莫辛-纳甘步枪。"
+ },
+ {
+  "source_id": "ed44b3d5e2aa2379",
+  "zh": "PM 的改装版本，带有枪口/消音器接口和配件导轨。"
+ },
+ {
+  "source_id": "ee74a1a5268a3ed2",
+  "zh": "G36 长枪管"
+ },
+ {
+  "source_id": "ef4618d4ec83068e",
+  "zh": "• 靠近 NVD 支架并松开即可装上。\r\n• <b>长按 {BTN_Bottom} + {BTN_Grip}</b>可取下。"
+ },
+ {
+  "source_id": "f0a7518687b6c64e",
+  "zh": "全息瞄准镜"
+ },
+ {
+  "source_id": "f11e4120dac9515c",
+  "zh": "/FCL-2 野外清理"
+ },
+ {
+  "source_id": "f32bdffadaade7fa",
+  "zh": "提供基础的精度和射程。"
+ },
+ {
+  "source_id": "f467a99bfbbf410f",
+  "zh": "探索者 73！"
+ },
+ {
+  "source_id": "f4c5eb4a4435d600",
+  "zh": "G3 弹匣"
+ },
+ {
+  "source_id": "faa0663419354c3a",
+  "zh": "无敌人"
+ },
+ {
+  "source_id": "fbf01e7397c1f1af",
+  "zh": "使用第一个投掷探针"
+ },
+ {
+  "source_id": "ff84903a87a302bc",
+  "zh": "注意！超过两名玩家的合作模式处于测试阶段。\r\n它可能不稳定，并含有会严重影响体验的错误。"
+ }
+]

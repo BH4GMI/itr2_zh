@@ -1,0 +1,390 @@
+[
+ {
+  "source_id": "db14f64b5835f11a",
+  "zh": "+P"
+ },
+ {
+  "source_id": "604c421543216727",
+  "zh": "12x70mm"
+ },
+ {
+  "source_id": "19a2a72f14005da7",
+  "zh": "5.45x39mm"
+ },
+ {
+  "source_id": "9d67f2c007e74682",
+  "zh": "5.56x45mm"
+ },
+ {
+  "source_id": "11b9c55b60e1af98",
+  "zh": "7.62x39mm"
+ },
+ {
+  "source_id": "d535a468dd68f9a4",
+  "zh": "7.62x51mm"
+ },
+ {
+  "source_id": "d6ae1c965cbaddd7",
+  "zh": "7.62x54mm"
+ },
+ {
+  "source_id": "694bbbc8241bdfa4",
+  "zh": "9x18mm"
+ },
+ {
+  "source_id": "2f8d1e86e891c5a5",
+  "zh": "9x19mm"
+ },
+ {
+  "source_id": "0a9a58ea62e8afb5",
+  "zh": "9x39mm"
+ },
+ {
+  "source_id": "205d9464ee01cb67",
+  "zh": "<L3>PASGT</L3><L4>Sfera</L4><L4>FAST</L4>"
+ },
+ {
+  "source_id": "87a8ba676bdf6e91",
+  "zh": "AS Val"
+ },
+ {
+  "source_id": "52a098593bbc83eb",
+  "zh": "Benelli M2"
+ },
+ {
+  "source_id": "dbe6c6b43879d7af",
+  "zh": "Bizon"
+ },
+ {
+  "source_id": "250d1c1ad0704893",
+  "zh": "Compact 9x19 M1911"
+ },
+ {
+  "source_id": "843a0782c1d67439",
+  "zh": "Compact IZh-27"
+ },
+ {
+  "source_id": "bccc14ee7da1d20f",
+  "zh": "Discord"
+ },
+ {
+  "source_id": "10af29d042641fdb",
+  "zh": "Eva"
+ },
+ {
+  "source_id": "7f95cb9fa98c425f",
+  "zh": "IZh-27"
+ },
+ {
+  "source_id": "3ba7745586294bf5",
+  "zh": "Kedr"
+ },
+ {
+  "source_id": "16a5aab7b1dc822d",
+  "zh": "Lauri"
+ },
+ {
+  "source_id": "33132004a9dbe941",
+  "zh": "m/s"
+ },
+ {
+  "source_id": "870ebb543c6e7e96",
+  "zh": "Mosin-Nagant"
+ },
+ {
+  "source_id": "eb5c9839b68c172f",
+  "zh": "R:\\UNPSC_EFOS\\system\\cmd.exe"
+ },
+ {
+  "source_id": "4af26436ae9d5ae3",
+  "zh": "Reddit"
+ },
+ {
+  "source_id": "d8342d1d5d384100",
+  "zh": "Remington 700"
+ },
+ {
+  "source_id": "4a359d1531a9f451",
+  "zh": "Saiga-12"
+ },
+ {
+  "source_id": "cce8ded3627ff238",
+  "zh": "Special Fort-17"
+ },
+ {
+  "source_id": "0691dc1c51153d52",
+  "zh": "SSh-40"
+ },
+ {
+  "source_id": "9f20e172817f3f0f",
+  "zh": "Vityaz"
+ },
+ {
+  "source_id": "8619762bdfe46cc6",
+  "zh": "0.10.2"
+ },
+ {
+  "source_id": "f1403d62a0a45c61",
+  "zh": "A/X"
+ },
+ {
+  "source_id": "8e0065ab0a9622e6",
+  "zh": "ACCESS DENIED"
+ },
+ {
+  "source_id": "f94037a9e560c2be",
+  "zh": "AKM"
+ },
+ {
+  "source_id": "6b9f5c8a940b0912",
+  "zh": "AKS-74U"
+ },
+ {
+  "source_id": "22ce7945adaef35a",
+  "zh": "B/Y"
+ },
+ {
+  "source_id": "a3c96338125facb6",
+  "zh": "BNVD-31"
+ },
+ {
+  "source_id": "2b051ef29248a36b",
+  "zh": "BNVD-7"
+ },
+ {
+  "source_id": "03b8a126d8f0c1f3",
+  "zh": "BP"
+ },
+ {
+  "source_id": "a1650ba68fd434ff",
+  "zh": "G3"
+ },
+ {
+  "source_id": "529e386b580f550e",
+  "zh": "G36"
+ },
+ {
+  "source_id": "4924ad6c3a44aa3a",
+  "zh": "G36C"
+ },
+ {
+  "source_id": "8c311f0520be9b05",
+  "zh": "GPNVD"
+ },
+ {
+  "source_id": "c1cdebf09db61c00",
+  "zh": "LAM-15"
+ },
+ {
+  "source_id": "a4e954a610868525",
+  "zh": "M1911"
+ },
+ {
+  "source_id": "677189d4dbe88d35",
+  "zh": "M4A1"
+ },
+ {
+  "source_id": "7daa631040c09cf0",
+  "zh": "MNVD-14"
+ },
+ {
+  "source_id": "2a9038c90e800b59",
+  "zh": "MP9"
+ },
+ {
+  "source_id": "798982dfcc6c0bf2",
+  "zh": "MP9 FDE"
+ },
+ {
+  "source_id": "05f9892a97d54101",
+  "zh": "PATH TO THE CENTER"
+ },
+ {
+  "source_id": "25610c1bb7ae1748",
+  "zh": "Placeholder text"
+ },
+ {
+  "source_id": "2b0f05936822613a",
+  "zh": "SKS"
+ },
+ {
+  "source_id": "7ca76df502b78c84",
+  "zh": "SR-25"
+ },
+ {
+  "source_id": "5da6b0aae62b2731",
+  "zh": "START SESSION"
+ },
+ {
+  "source_id": "233016f9dcffc9b4",
+  "zh": "SVD"
+ },
+ {
+  "source_id": "5e3f230d5d296395",
+  "zh": "TR"
+ },
+ {
+  "source_id": "1ab155781e0e0fea",
+  "zh": "UNPSC"
+ },
+ {
+  "source_id": "7c5b736827f50aac",
+  "zh": "Aleksei Shulga"
+ },
+ {
+  "source_id": "c357d4254fbc3417",
+  "zh": "Aleksei Shulga\r\nSergei Arapov"
+ },
+ {
+  "source_id": "2677e4e39f3e0fb9",
+  "zh": "Mikhail Terentev\r\nSergei Arapov"
+ },
+ {
+  "source_id": "4e344abb3e7e2723",
+  "zh": "Anton Subbota\r\nAleksei Balashov\r\nVolodymyr Chelpan"
+ },
+ {
+  "source_id": "ba2a426d29f913f9",
+  "zh": "Sergei Arapov\r\nIuliia Drach"
+ },
+ {
+  "source_id": "10d3b9576a854d13",
+  "zh": "Nikita Jansons\r\nKonstantin Muralev\r\nMihhail Kohtov\r\nStanislav Petrushin\r\nJelena Tõsjatova\r\nMikhail Chelnokov\r\nAleksandr Timoshenko\r\nYuri Romanyuk"
+ },
+ {
+  "source_id": "7cd410276f964bf3",
+  "zh": "\r\nMihhail Kohtov\r\nAlexander Dolbilov\r\nRamil Roosileht\r\nIgor Rashkuev\r\nMaksim Shvyrev"
+ },
+ {
+  "source_id": "4b7f458082d24e15",
+  "zh": "Aleksandr Svetlov\r\nDmitry Bychkov\r\nAleksandr Nikulin\r\nFedor Fedosov\r\nDmitry Teppoev\r\nMark Jaromishin\r\nRobert Marchenko\r\nVladimir Yakovlev"
+ },
+ {
+  "source_id": "3ee90e7212c3d5ca",
+  "zh": "Sergei Aksenov"
+ },
+ {
+  "source_id": "a79e3b62c4b9b08b",
+  "zh": "Raman Tarasau\r\nVadim Mamaev\r\nDmitriy Marchenko"
+ },
+ {
+  "source_id": "02296b5a71d084bc",
+  "zh": "Iuliia Trofimova\r\nIvan Stefanov\r\nKonstantin Kruglov\r\nIrina Sedova"
+ },
+ {
+  "source_id": "02ef239ffdc8edda",
+  "zh": "CM IMMERSIVE"
+ },
+ {
+  "source_id": "deeca528dbc28e36",
+  "zh": "Vlad Rannik"
+ },
+ {
+  "source_id": "7a9fec60195477c9",
+  "zh": "CEO"
+ },
+ {
+  "source_id": "4eebe4d1745f58a1",
+  "zh": "Bohdan Sereda"
+ },
+ {
+  "source_id": "f5dc74c3ca9a399a",
+  "zh": "Vitaliia Martsinkiavichiute\r\nEkaterina Gavrik"
+ },
+ {
+  "source_id": "66c934f4e74bdbeb",
+  "zh": "Danil Deneko"
+ },
+ {
+  "source_id": "018d11a3015b1928",
+  "zh": "Evgeniia Kuzmicheva"
+ },
+ {
+  "source_id": "32546118b43a5e41",
+  "zh": "CM GAMES"
+ },
+ {
+  "source_id": "d5d515a7837d0434",
+  "zh": "Paul Flanagan"
+ },
+ {
+  "source_id": "08dfbc4edf4a6c6e",
+  "zh": "Aleksander Daniel Matikainen\r\nInna Sidoruk\r\nMarina Serketti"
+ },
+ {
+  "source_id": "3ff7a075316cdbae",
+  "zh": "Jelena Kolajevs\r\nStanislav Dubov\r\nSvetlana Gorkunov\r\nAnton Redanskii\r\nEva Gorkunova"
+ },
+ {
+  "source_id": "c1c2cb077dc12901",
+  "zh": "Ruslan Malashevich"
+ },
+ {
+  "source_id": "de3a48b77549adce",
+  "zh": "Vitali Zahharov\r\nNikolai Kapp"
+ },
+ {
+  "source_id": "0580a63f7635b665",
+  "zh": "LoopySoft"
+ },
+ {
+  "source_id": "485b8c7758821149",
+  "zh": "Evgeny Muralev\r\nManuk Avetyan\r\nAleksandr Nekrasov"
+ },
+ {
+  "source_id": "f36720368b18d0d9",
+  "zh": "Luis (King Lou) Fernandez (UNPSC Announcer)\r\nMayann Voss (Eva)\r\nIsaac Nelson (Lauri)\r\nTamara Ryan (The Presence)\r\nTricia Brioux (Mimics & Figures)\r\nMichael Neeb (Mimics & Figures)"
+ },
+ {
+  "source_id": "575c92795c8d8983",
+  "zh": "Joosep Kõrvits\r\nBohdan Sereda"
+ },
+ {
+  "source_id": "52c9956c5d318640",
+  "zh": "Sander Somma"
+ },
+ {
+  "source_id": "693adb1cbc664a5a",
+  "zh": "CM IMMERSIVE OÜ, 2026. All rights reserved."
+ },
+ {
+  "source_id": "fc0292034f9b2eba",
+  "zh": "GEX9 D3 VOV\r\n5Y'76 NR T14XEU JY C0IQO YFAEUVU7 4R LVDW1NDT WZRNQM4A, VVHZIBYIQO 93VS WPB3BGK 88W XOOM3A 5OZ.\r\nQ U5 RTWIWZZNJ 88W ZNIW 14 AHH KUYVS. FW2XZRPQ2Y ZT ZQ47 5OW JY S 3RRJ4W7.\r\nWH PUDV MDLY S 0THX Z31WDZX. 9 VXSMWB 1EFQ004CL8I.\r\n2.0. WK3 WS5'T ZM EAV TKM 936EP 9U4TTXUC?"
+ },
+ {
+  "source_id": "310b88ba35dede29",
+  "zh": "IB2 56 GIBW\r\n4 SZ8'A PZO8 1SW0, FBX JT SOCI 5S ZWZWTI. RR9 DZ11 G4H86L9VW RV8 3TRZGBPB07.\r\nO0 J4V GWP QRKVW, X9W QYITOF 742 V8TIC1 Q61 XYI UN72. 5S 5I8S 56 AI0X 0T WW8I ALX1.\r\nT'9 0I5H46R O 0Y7QX30 65 XYI FWLR490 Z4P 5WAL4RH2.\r\nLARMAMAV 5VV RV8G 16O5WWIE.\r\n5.7. SRGY KB9P9 YE0 MG2 ZA5 WRRZ1490."
+ },
+ {
+  "source_id": "4dc4418874563f0f",
+  "zh": "ZR15 TZ 6O4\r\nQ9MP CN, ZC OOO6NN9QS LFE T69D! 54EB'4Q MPYNV8SF40.\r\nWR'0Q SPBT N ZUT50E TWRT 5C TUS RAX3LB. OXRPYDB A7A9DI9U 3P 54E 9S0T ZBE.\r\nV'9 5EY8I9U 4HP 0A3S5T 66SRO7CS IPQO4E7 KI3V SAYMMRRQ.\r\nI Y6EQ RQTL3L4 6Z P6CMR2TE4G."
+ },
+ {
+  "source_id": "0ec7cdd87220d8bd",
+  "zh": "QW5 8Q HQ65\r\nQ VZUVW Q'XW NMQV E3YX7WO95MP.\r\n8KBTWZ6U EM9 4IMWZ N7WO BTM OIIW. U 5M9P'B UVRWT5QL 3VV9X IR8G0 4PQ NCU4. V9 ZGS5WZ9 YW7M SQXWZ.\r\nQ PWP'B WV95 YZM8 TM'N7 4MXT UWO67QVG, N64 Q'O 0QY3MUBUVS XT34MO8K3Z N9Z OG RIYQNG.\r\n7MUVH37KQUG44 I48CUTMP."
+ },
+ {
+  "source_id": "9a78d93038eacfae",
+  "zh": "ZVD9 YO G2S\r\nDX'TQ TC7E TTZJ OH HOBA NFMK5Y.\r\nTTV 7OW 5EREM YHG 1SG? WW 7OW 9ACX IXSGCS Z3 8ME DTLA8KX WJ2 CR3 PJLR HOB ZMY OWC OW CPJ EW?\r\n8'M 528 XEPWI5Z ISYV9I5Z 5NTJ ZA5HUJDG YO1 3W8. I'N5 WR88 KOT TN B1LFTG 2N A88MOPDS.\r\nZY Q IOP'C HVTZ KRQ4 Y4D QS 5 FTY0, 8'TQ TTH T4 AMFCJ HOB CPWOWZH 4CPJR E9A53MQS."
+ },
+ {
+  "source_id": "7a75ade70cc43f7b",
+  "zh": "PSG1"
+ },
+ {
+  "source_id": "28d76c3b1a40a8fe",
+  "zh": "MP5"
+ },
+ {
+  "source_id": "9f099e725e26ff38",
+  "zh": "MP5K"
+ },
+ {
+  "source_id": "b3a06fe0d0d308e0",
+  "zh": ".45 ACP"
+ },
+ {
+  "source_id": "91af5e34a6e19100",
+  "zh": "0.338"
+ }
+]
