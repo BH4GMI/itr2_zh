@@ -18,24 +18,43 @@ Layout (all little-endian unless stated), verified against build 24024260:
   [ ... ]                          directory index, then the perfect hash map
 The directory index / block table are located from the mount-point string so that the
 unknown `extra` field size does not matter.
+
+Oodle 加载是惰性的（容器未压缩时用不到）；DLL 发现复用 collect_game_inputs.Oodle
+（Steam 扫描），失败时兜底 pyuepak 自带的 oo2core*.dll。
+CLI 在 pak 目录运行（相对 stem 拼当前目录），或传绝对路径。
 """
 import ctypes, struct, os, sys, argparse, re, math
 
-ROOT = r"D:\SteamLibrary\steamapps\common\IntoTheRadius2\IntoTheRadius2\Content\Paks"
-OODLE = r"C:\Program Files (x86)\Steam\steamapps\common\Call of Duty HQ\oo2core_8_win64.dll"
+_oodle = None
 
-_lib = ctypes.CDLL(OODLE)
-_dec = _lib.OodleLZ_Decompress
-_dec.restype = ctypes.c_longlong
-_dec.argtypes = [ctypes.c_char_p, ctypes.c_longlong, ctypes.c_char_p, ctypes.c_longlong,
-                 ctypes.c_int, ctypes.c_int, ctypes.c_int, ctypes.c_void_p, ctypes.c_longlong,
-                 ctypes.c_void_p, ctypes.c_void_p, ctypes.c_void_p, ctypes.c_longlong, ctypes.c_int]
+
+def _find_oodle():
+    """发现并加载 Oodle DLL；找不到时抛出带原因的错误。"""
+    from collect_game_inputs import Oodle
+    o = Oodle()
+    if o.load(None):                      # explicit + Steam 库自动扫描
+        return o
+    try:
+        import pyuepak
+        pkg = os.path.dirname(pyuepak.__file__)
+        for name in sorted(os.listdir(pkg)):   # pyuepak 自带 oo2core*.dll 兜底
+            if name.lower().startswith("oo2core") and name.lower().endswith(".dll"):
+                o2 = Oodle(os.path.join(pkg, name))
+                if o2.load(None):
+                    return o2
+                o.error = o2.error or o.error
+    except OSError as e:                  # pyuepak 目录不可列：并入报错
+        o.error = "%s; pyuepak dir: %s" % (o.error, e)
+    raise RuntimeError("找不到可用的 Oodle DLL（Steam 扫描与 pyuepak 自带均失败）: %s"
+                       % o.error)
 
 
 def oodle(src, raw_len):
-    buf = ctypes.create_string_buffer(raw_len + 65536)
-    r = _dec(src, len(src), buf, raw_len, 1, 0, 0, None, 0, None, None, None, 0, 3)
-    return buf.raw[:r] if r > 0 else None
+    global _oodle
+    if _oodle is None:
+        _oodle = _find_oodle()
+    data = _oodle.decompress(src, raw_len)
+    return data
 
 
 def align(v, a=16):
@@ -54,10 +73,12 @@ def read_fstring(b, off):
 
 
 class Container:
-    def __init__(self, stem, verbose=True):
+    def __init__(self, stem, base_dir=None, verbose=True):
+        """stem: 容器名（相对 base_dir）或绝对路径前缀；base_dir 默认当前目录。"""
         self.stem = stem
-        self.utoc_path = os.path.join(ROOT, stem + ".utoc")
-        self.ucas_path = os.path.join(ROOT, stem + ".ucas")
+        base = base_dir or os.getcwd()
+        self.utoc_path = os.path.join(base, stem + ".utoc")
+        self.ucas_path = os.path.join(base, stem + ".ucas")
         self.utoc = open(self.utoc_path, "rb").read()
         self.ucas = open(self.ucas_path, "rb") if os.path.exists(self.ucas_path) else None
         self.ucas_size = os.path.getsize(self.ucas_path) if self.ucas else 0

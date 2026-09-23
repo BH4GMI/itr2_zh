@@ -1,24 +1,22 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2026 The ITR2 Chinese Patch Authors
-"""从游戏自带的 NotoSansSC 字体资源中提取 TTF，并生成中文界面字体覆盖 pak。
+"""从 game_inputs/ 采集的 NotoSansSC 字体资源中提取 TTF，并生成中文界面字体覆盖 pak。
 
 产物：dist_zh/pakchunk100-ZH_Fonts_P.pak
 覆盖：IntoTheRadius2/Content/ITR2/Fonts/{NEXT_ART_SemiBold,PTSansNarrow-Bold,PTSansNarrow-Regular}.ufont
+
+输入：../game_inputs/NotoSansSC-{Regular,Bold}.uasset
+（collect_game_inputs.py 在游戏机采集交付，本脚本不再需要游戏安装目录）。
 """
-import os, struct, sys, json, math
-sys.path.insert(0, r"D:\SteamLibrary\steamapps\common\itr2_zh")
-import iostore
+import os, struct, sys, json
+from pathlib import Path
 
-ROOT = r"D:\SteamLibrary\steamapps\common\itr2_zh"
-GAME = r"D:\SteamLibrary\steamapps\common\IntoTheRadius2"
-OUT = os.path.join(ROOT, "iostore_out")
-FONTS = os.path.join(ROOT, "fonts")
-DIST = os.path.join(ROOT, "dist_zh")
-os.makedirs(FONTS, exist_ok=True)
-os.makedirs(DIST, exist_ok=True)
-
-PAKS = os.path.join(GAME, "IntoTheRadius2", "Content", "Paks")
-c = iostore.Container(os.path.join(PAKS, "pakchunk0-Windows"), verbose=False)
+HERE = Path(__file__).resolve().parent
+GAME_INPUTS = HERE.parent / "game_inputs"
+FONTS = HERE / "fonts"
+DIST = HERE / "dist_zh"
+FONTS.mkdir(exist_ok=True)
+DIST.mkdir(exist_ok=True)
 
 
 def sfnt_tables(data, off):
@@ -37,8 +35,8 @@ def sfnt_tables(data, off):
     return tabs
 
 
-def carve(asset_path, out_path):
-    raw = c.extract(asset_path)
+def carve(raw, out_path):
+    """在 uasset 原始字节里定位内嵌 TTF（完整 SFNT 表集），切出并落盘。"""
     off = raw.find(b"\x00\x01\x00\x00")
     best = None
     while off >= 0:
@@ -49,7 +47,7 @@ def carve(asset_path, out_path):
                 best = (off, end, tabs)
         off = raw.find(b"\x00\x01\x00\x00", off + 1)
     if not best:
-        raise SystemExit("no embedded TTF in " + asset_path)
+        raise SystemExit("no embedded TTF in asset (%d bytes)" % len(raw))
     off, end, tabs = best
     end = (end + 3) & ~3
     # 表偏移是相对 TTF 起点的，因此切片必须从 off 开始
@@ -98,13 +96,17 @@ def cmap_codepoints(ttf):
 def main():
     result = {}
     spec = [
-        ("IntoTheRadius2/Content/ITR2/Fonts/NotoSansSC-Regular.uasset", "NotoSansSC-Regular.ttf"),
-        ("IntoTheRadius2/Content/ITR2/Fonts/NotoSansSC-Bold.uasset", "NotoSansSC-Bold.ttf"),
+        ("NotoSansSC-Regular.uasset", "NotoSansSC-Regular.ttf"),
+        ("NotoSansSC-Bold.uasset", "NotoSansSC-Bold.ttf"),
     ]
     for asset, fname in spec:
-        out = os.path.join(FONTS, fname)
+        src = GAME_INPUTS / asset
+        if not src.exists():
+            print("[!] 缺少 %s —— 先在游戏机运行 collect_game_inputs.py" % src)
+            continue
+        out = str(FONTS / fname)
         try:
-            ttf, tabs, rawlen, off = carve(asset, out)
+            ttf, tabs, rawlen, off = carve(src.read_bytes(), out)
         except SystemExit as e:
             print("[!]", e)
             continue
@@ -113,7 +115,7 @@ def main():
         kana = sum(1 for cp in cps if 0x3040 <= cp <= 0x30FF)
         hg = sum(1 for cp in cps if 0xAC00 <= cp <= 0xD7A3)
         lat = sum(1 for cp in cps if 0x20 <= cp <= 0x7E)
-        print("[OK] %s -> %s  %d bytes (asset %d, ttf@0x%X, tables=%d)" % (asset.rsplit("/", 1)[-1], fname, len(ttf), rawlen, off, len(tabs)))
+        print("[OK] %s -> %s  %d bytes (asset %d, ttf@0x%X, tables=%d)" % (asset, fname, len(ttf), rawlen, off, len(tabs)))
         print("     codepoints=%d  CJK=%d  假名=%d  谚文=%d  ASCII=%d" % (len(cps), cjk, kana, hg, lat))
         result[fname] = {"bytes": len(ttf), "codepoints": len(cps), "cjk": cjk, "kana": kana, "hangul": hg, "ascii": lat}
 
@@ -129,19 +131,19 @@ def main():
     pak.version = PakVersion.V11
     added = []
     for logical, fname in mapping:
-        p = os.path.join(FONTS, fname)
-        if not os.path.exists(p):
+        p = FONTS / fname
+        if not p.exists():
             print("[!] missing", p)
             continue
-        pak.add_file(logical, open(p, "rb").read())
-        added.append((logical, os.path.getsize(p)))
-    out_pak = os.path.join(DIST, "pakchunk100-ZH_Fonts_P.pak")
+        pak.add_file(logical, p.read_bytes())
+        added.append((logical, p.stat().st_size))
+    out_pak = str(DIST / "pakchunk100-ZH_Fonts_P.pak")
     pak.write(out_pak)
     print("[OK] font pak:", out_pak, os.path.getsize(out_pak), "bytes")
     for logical, size in added:
         print("     %-70s %d" % (logical, size))
 
-    with open(os.path.join(ROOT, "font_report.json"), "w", encoding="utf-8") as f:
+    with open(str(HERE / "font_report.json"), "w", encoding="utf-8") as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
 

@@ -24,7 +24,8 @@ progress_report.md
 *.zip
 !ITR2_Chinese_v2.zip
 
-# 外部参考项目（未声明 LICENSE，不随本仓库分发；用 README 里的 git clone 获取）
+# 外部参考项目（未声明 LICENSE，不随本仓库分发）
+# 注：构建链已不再加载其代码（2026 阶段一重构），保留此条目以防误入库
 ref_ko/
 
 # 运行环境

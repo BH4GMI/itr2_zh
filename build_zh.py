@@ -1,43 +1,52 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2026 The ITR2 Chinese Patch Authors
-"""ITR2 简体中文补丁构建脚本（基于 refracta/itr2-ko 的构建逻辑适配）
+"""ITR2 简体中文补丁构建脚本（去 ref_ko 化·阶段一，零上游依赖）。
 
 产物（dist_zh/）：
-  pakchunk99-ZH_Locres_P.pak          —— 覆盖 IntoTheRadius2/Content/Localization/Game/en/Game.locres（+ Game.locmeta）
-  pakchunk99-ZH_UAsset-Windows.{pak,utoc,ucas} —— EnglishSource.uasset 的 IoStore override（mount ../../../Projectc/...）
+  pakchunk99-ZH_Locres_P.pak                —— 覆盖 Game.en/Game.locres（+ Game.locmeta）
+  pakchunk99-ZH_UAsset-Windows.{pak,utoc,ucas} —— EnglishSource.uasset 的 IoStore override
+  Game.zh-Hans.locres                       —— 中间产物（结构校验用）
+  EnglishSource.zh-Hans.uasset.raw          —— 中间产物（补丁后 uasset）
+  build_summary.json                        —— 构建统计
 
-参考与致谢：refracta/itr2-ko（MIT 风格开源项目，提供 IoStore 容器模板与字节级补丁逻辑）。
+构建链全部使用本仓库自研模块：
+  locres.py        —— locres 解析 / 装配（往返与金标准逐字节验证）
+  textkey.py       —— key_hash(CityHash64×23 折叠) / source_hash(CRC32 UTF-32LE) / source_id(SHA1[:16])
+  pakbuild.py      —— pyuepak 封装（重新打包与金标准 380,781 字节逐字节一致）
+  uasset_text.py   —— serial 区解析 + 文本补丁（b1/b2/c 三重验证）
+  iostore_build.py —— IoStore 三件套构建（模板切自金标准产物，逐字节复现验证）
+  prepare_records.py —— records_with_zh.json 生成（5496 条自校验）
+
+输入（collect_game_inputs.py 在游戏机交付到 ../game_inputs/）：
+  pakchunk0-Windows.pak（取 Game.locres + Game.locmeta）、EnglishSource.uasset
+  加本仓库 zh_sources.json（译文，经 prepare_records.py 汇入 records）。
+
+产物结构目标（与金标准补丁一致）：
+  locres_entries_built=4611（ns '':1231 + 'EnglishSource':3380）
+
+参考与致谢：refracta/itr2-ko（其公开仓库提供了 locres 头部字段语义与 key_hash
+×23 折叠公式的线索；本仓库实现与验证数据均独立——见 THIRD-PARTY.md）。
 """
 import hashlib
-import importlib.util
 import json
 import os
-import shutil
 import sys
-import zipfile
 from pathlib import Path
 
-ROOT = Path(r"D:\SteamLibrary\steamapps\common\itr2_zh")
-GAME = Path(r"D:\SteamLibrary\steamapps\common\IntoTheRadius2")
-KO_SCRIPT = ROOT / "ref_ko" / "scripts" / "build" / "build_locres_patch.py"
-DIST = ROOT / "dist_zh"
+HERE = Path(__file__).resolve().parent
+GAME_INPUTS = HERE.parent / "game_inputs"
+DIST = HERE / "dist_zh"
+RECORDS = HERE / "records_with_zh.json"
+BASE_PAK = GAME_INPUTS / "pakchunk0-Windows.pak"
+UASSET = GAME_INPUTS / "EnglishSource.uasset"
 
-# 载入韩方构建模块，复用其经过验证的解析/打包/补丁函数
-spec = importlib.util.spec_from_file_location("ko_build", KO_SCRIPT)
-m = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(m)
+GAME_LOCRES_PATH = "IntoTheRadius2/Content/Localization/Game/en/Game.locres"
+GAME_LOCMETA_PATH = "IntoTheRadius2/Content/Localization/Game/Game.locmeta"
+BASENAME_LOCRES = "pakchunk99-ZH_Locres_P.pak"
+BASENAME_UASSET = "pakchunk99-ZH_UAsset-Windows"
+IOMOUNT = "../../../Projectc/Content/ITR2/Configurations/Localization/"
 
-m.patch_pyuepak_oodle_nullable_args()
-
-m.DIST = DIST
-m.RECORDS = ROOT / "records_with_zh.json"
-m.BASE_PAK_CANDIDATES = [GAME / "IntoTheRadius2" / "Content" / "Paks" / "pakchunk0-Windows.pak"]
-m.BASE_ENGLISHSOURCE_CANDIDATES = [ROOT / "iostore_out" / "EnglishSource.uasset"]
-m.ENGLISHSOURCE_LOCRES_META_CANDIDATES = []          # 不需要：key_hash 用公式自行计算（已对 2164 条样本验证 100% 命中）
-m.ENGLISHSOURCE_BASENAME = "pakchunk99-ZH_UAsset-Windows"
-m.LOCRES_BASENAME = "pakchunk99-ZH_Locres_P.pak"
-
-# 韩方手工补充的主菜单条目（这些字符串不在提取结果里），改为中文
+# 手工补充的主菜单条目（这些字符串不在提取结果里），改为中文
 EXTRA_ZH = [
     ("41C7E447418490718B2CE78EFFFAE0D7", "Start new game", "开始新游戏"),
     ("CC36858D44605D96DB012A8B5292C316", "Starting a new game will delete all Single-player saves. Are you sure?", "开始新游戏将删除所有单人存档。确定吗？"),
@@ -78,34 +87,45 @@ EXTRA_ZH = [
     ("8A0AC0D840310FCA66C8BDB4242F01C0", "I'm broken", "我坏掉了"),
     ("703A893C42F84072BBCB388CED98B70F", "Hey, dude!", "嘿，老兄！"),
 ]
-m.EXTRA_ENGLISHSOURCE_LOCRES_ENTRIES = [
-    {"key": k, "source": en, "ko": zh} for k, en, zh in EXTRA_ZH
-]
+
+sys.path.insert(0, str(HERE))
+import iostore_build
+import locres as L
+import pakbuild
+import textkey
+import uasset_text
 
 
 def main():
-    DIST.mkdir(parents=True, exist_ok=True)
-    base_pak = m.first_existing(m.BASE_PAK_CANDIDATES)
-    records = m.load_json(m.RECORDS)
-    print("[i] base pak:", base_pak)
+    for p in (BASE_PAK, UASSET, RECORDS):
+        if not p.exists():
+            raise SystemExit("缺少构建输入: %s\n"
+                             "（先在游戏机运行 collect_game_inputs.py，再运行 prepare_records.py）" % p)
+    DIST.mkdir(exist_ok=True)
+    records = json.loads(RECORDS.read_text(encoding="utf-8"))
     print("[i] records:", len(records))
 
-    base_locres = m.extract_pak_file(base_pak, m.GAME_LOCRES_PATH)
-    locmeta = m.extract_pak_file(base_pak, m.GAME_LOCMETA_PATH)
-    namespaces, base_entries = m.parse_locres(base_locres)
-    print("[i] base locres: %d entries, namespaces=%s" % (len(base_entries), [n["namespace"] for n in namespaces]))
+    # ---- 原版 locres / locmeta（从游戏 pak 提取）----
+    files = pakbuild.read_pak(str(BASE_PAK))
+    if GAME_LOCRES_PATH not in files:
+        raise SystemExit("pak 中未找到 %s" % GAME_LOCRES_PATH)
+    base_locres = files[GAME_LOCRES_PATH]
+    locmeta = files[GAME_LOCMETA_PATH]
+    base = L.parse_locres(base_locres)
+    print("[i] base locres: %d entries, namespaces=%s" % (
+        sum(ns["count"] for ns in base["namespaces"]),
+        [str(ns["namespace"]) for ns in base["namespaces"]]))
 
     locres_records = [r for r in records if r["container"] == "Game.locres"]
     uasset_records = [r for r in records if r["container"] == "EnglishSource.uasset"]
     print("[i] locres records=%d uasset records=%d" % (len(locres_records), len(uasset_records)))
 
+    # ---- union：locres 记录 -> uasset 记录（Placeholder 跳过/冲突覆盖）-> EXTRA ----
     union = {}
     for r in locres_records:
         union[(r["namespace"], r["key"])] = {
-            "namespace": r["namespace"],
-            "key": r["key"],
-            "key_hash": r["key_hash"],
-            "source_hash": r["source_hash"],
+            "namespace": r["namespace"], "key": r["key"],
+            "key_hash": r["key_hash"], "source_hash": r["source_hash"],
             "ko": r.get("ko") or r["source"],
         }
     added = overridden = preserved = 0
@@ -114,53 +134,70 @@ def main():
         if r["source"] == "Placeholder text":
             preserved += int(k in union)
             continue
-        e = {
-            "namespace": "EnglishSource",
-            "key": r["key"],
-            "key_hash": m.text_key_hash(r["key"]),
-            "source_hash": m.source_hash(r["source"]),
-            "ko": r.get("ko") or r["source"],
-        }
-        if k in union:
-            overridden += 1
-        else:
-            added += 1
-        union[k] = e
-    for extra in m.EXTRA_ENGLISHSOURCE_LOCRES_ENTRIES:
-        k = ("EnglishSource", extra["key"])
         if k in union:
             overridden += 1
         else:
             added += 1
         union[k] = {
-            "namespace": "EnglishSource",
-            "key": extra["key"],
-            "key_hash": m.text_key_hash(extra["key"]),
-            "source_hash": m.explicit_or_computed_source_hash(extra),
-            "ko": extra["ko"],
+            "namespace": "EnglishSource", "key": r["key"],
+            "key_hash": textkey.text_key_hash(r["key"]),
+            "source_hash": textkey.source_hash(r["source"]),
+            "ko": r.get("ko") or r["source"],
+        }
+    for key, en, zh in EXTRA_ZH:
+        k = ("EnglishSource", key)
+        if k in union:
+            overridden += 1
+        else:
+            added += 1
+        union[k] = {
+            "namespace": "EnglishSource", "key": key,
+            "key_hash": textkey.text_key_hash(key),
+            "source_hash": textkey.source_hash(en),
+            "ko": zh,
         }
 
     entries = list(union.values())
-    locres = m.build_locres(namespaces, entries)
-    locres_path = DIST / "Game.zh-Hans.locres"
-    locres_path.write_bytes(locres)
+    locres_bytes = L.assemble(base, entries)
+    (DIST / "Game.zh-Hans.locres").write_bytes(locres_bytes)
+    print("[i] assembled: %d entries -> %d bytes" % (len(entries), len(locres_bytes)))
 
     # 自检：重新解析产出的 locres
-    ns2, ent2 = m.parse_locres(locres)
-    zh_count = sum(1 for e in ent2 if any("\u4e00" <= c <= "\u9fff" for c in e.get("localized", "")))
-    print("[i] rebuilt locres: entries=%d (中文条目 %d)" % (len(ent2), zh_count))
-    assert len(ent2) == len(entries)
+    h2 = L.parse_locres(locres_bytes)
+    ent2 = [e for ns in h2["namespaces"] for e in ns["entries"]]
+    ns_counts = {str(ns["namespace"]): len(ns["entries"]) for ns in h2["namespaces"]}
+    zh_count = sum(1 for e in ent2
+                   if any("\u4e00" <= c <= "\u9fff"
+                          for c in h2["pool"][e["localized_index"]]["str"]))
+    print("[i] rebuilt: entries=%d ns=%s 中文条目=%d" % (len(ent2), ns_counts, zh_count))
+    if len(ent2) != len(entries):
+        raise RuntimeError("locres 自检失败: 解析 %d != 装配 %d" % (len(ent2), len(entries)))
 
-    pak_path = m.make_pak(m.LOCRES_BASENAME, locres, locmeta)
-    print("[OK] locres pak:", pak_path, pak_path.stat().st_size)
+    # ---- locres patch pak ----
+    pak_path = pakbuild.make_pak({
+        GAME_LOCRES_PATH: locres_bytes,
+        GAME_LOCMETA_PATH: locmeta,
+    }, str(DIST / BASENAME_LOCRES))
+    print("[OK] locres pak:", pak_path, os.path.getsize(pak_path))
 
-    patched_uasset, uasset_summary = m.patch_englishsource_uasset(records)
+    # ---- EnglishSource.uasset 补丁 ----
+    patched_uasset, uasset_summary = uasset_text.patch(UASSET.read_bytes(), records)
     (DIST / "EnglishSource.zh-Hans.uasset.raw").write_bytes(patched_uasset)
-    es_files, es_summary = m.build_englishsource_iostore(patched_uasset)
+    print("[OK] uasset patch: %d -> %d bytes, changed=%d"
+          % (uasset_summary["original_size"], uasset_summary["patched_size"],
+             uasset_summary["changed"]))
+
+    # ---- IoStore 三件套 ----
+    built = iostore_build.build_iostore(patched_uasset, iostore_build.load_templates())
+    es_files = []
+    for ext in ("utoc", "ucas", "pak"):
+        p = DIST / ("%s.%s" % (BASENAME_UASSET, ext))
+        p.write_bytes(built[ext])
+        es_files.append(p)
     print("[OK] EnglishSource IoStore:", ", ".join(p.name for p in es_files))
 
     summary = {
-        "base_pak": str(base_pak),
+        "base_pak": str(BASE_PAK),
         "locres_records": len(locres_records),
         "uasset_records": len(uasset_records),
         "locres_entries_built": len(entries),
@@ -169,12 +206,21 @@ def main():
         "placeholder_preserved": preserved,
         "chinese_entries": zh_count,
         "uasset": uasset_summary,
-        "iostore": es_summary,
+        "iostore": {
+            "basename": BASENAME_UASSET,
+            "mount": IOMOUNT,
+            "entry0_length": len(patched_uasset),
+            "block_count": -(-len(patched_uasset) // iostore_build.BLOCK_SIZE) + 1,
+            "files": {p.name: {"size": p.stat().st_size,
+                               "sha1": hashlib.sha1(p.read_bytes()).hexdigest()}
+                      for p in es_files},
+        },
     }
-    (DIST / "build_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(json.dumps({k: v for k, v in summary.items() if k not in ("uasset", "iostore")}, ensure_ascii=False, indent=2))
-    print("uasset entries:", uasset_summary["uasset_entries"], "changed:", uasset_summary["translated_or_changed_entries"])
-    print("files:", [p.name for p in sorted(DIST.iterdir())])
+    (DIST / "build_summary.json").write_text(
+        json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(json.dumps({k: v for k, v in summary.items() if k not in ("uasset", "iostore")},
+                     ensure_ascii=False, indent=2))
+    print("files:", sorted(p.name for p in DIST.iterdir()))
 
 
 if __name__ == "__main__":

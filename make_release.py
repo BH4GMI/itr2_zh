@@ -1,18 +1,19 @@
 # SPDX-License-Identifier: Apache-2.0
 # Copyright 2026 The ITR2 Chinese Patch Authors
-"""构建 v2 交付包（release_zh + zip），并清理已作废的 v1 松散文件包。
+"""构建 v2 交付包（release_zh + zip）。
 
-产物：
-  D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\release_zh\\           交付目录
-  D:\\SteamLibrary\\steamapps\\common\\itr2_zh\\ITR2_Chinese_v2.zip   压缩包
+产物（相对本脚本所在仓库目录）：
+  release_zh/           交付目录
+  ITR2_Chinese_v2.zip   压缩包
 """
 import hashlib
 import json
 import os
 import shutil
 import zipfile
+from pathlib import Path
 
-ROOT = r"D:\SteamLibrary\steamapps\common\itr2_zh"
+ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist_zh")
 REL = os.path.join(ROOT, "release_zh")
 ZIP = os.path.join(ROOT, "ITR2_Chinese_v2.zip")
@@ -250,9 +251,10 @@ UE 在挂载时会先读 pak、再读松散文件，所以把 `Game.locres` 以�
 
 ## 六、技术与致谢
 
-- 构建流程参考开源项目 [refracta/itr2-ko](https://github.com/refracta/itr2-ko)：
-  其 IoStore 容器模板、`source_hash = CRC32(UTF-32LE)`、`key_hash = CityHash64(UTF-16LE)` 折叠算法，
-  以及“locres + uasset 必须同时打”的结论，本包直接复用并已逐条自校验。
+- 构建工具为**独立实现**；文件格式事实与哈希公式（`source_hash = CRC32(UTF-32LE)`、
+  `key_hash = CityHash64(UTF-16LE)` 折叠）参考了开源项目 [refracta/itr2-ko](https://github.com/refracta/itr2-ko)
+  的公开说明，以及“locres + uasset 必须同时打”的结论。全部格式实现均以游戏原文件
+  与发布产物逐字节自校验；未复制、未加载该项目的任何代码与数据文件。
 - 中文术语参考中文社区现有汉化（Nexus 258/304）与游戏内语境（半径、神器、拟态怪、佩乔尔斯克异常、UNPSC 等）。
 - 字体取自游戏自身资源（`NotoSansSC-Regular/Bold`），其上游为 **SIL Open Font License 1.1** 授权的
   Noto Sans SC；本包已随附许可证全文（`licenses\\OFL-NotoSansSC.txt`），依该许可不得单独售卖字体本身。
@@ -264,8 +266,8 @@ UE 在挂载时会先读 pak、再读松散文件，所以把 `Game.locres` 以�
   第三方内容清单、修改说明与致谢见随包 `NOTICE`。
 - 本补丁为**非官方爱好者汉化**。《Into the Radius 2》的游戏资源版权归 **CM Games** 所有，
   本项目与其无从属关系，亦未获其背书，请勿用于商业用途。
-- 构建过程参考了开源项目 [refracta/itr2-ko](https://github.com/refracta/itr2-ko)；
-  该项目未声明许可证，其源代码与数据文件未随本包分发。
+- 构建工具为独立实现，文件格式事实参考了开源项目 [refracta/itr2-ko](https://github.com/refracta/itr2-ko)；
+  该项目未声明许可证，其源代码与数据文件未复制、未随本包分发。
 - Oodle 数据压缩运行库为 Epic Games / RAD Game Tools 专有，本包不含其代码
   （自建容器采用未压缩存储，解压由游戏程序自身完成）。
 
@@ -315,23 +317,7 @@ def sha1(path):
 
 
 def main():
-    # 1) 清理作废的 v1 松散文件包（翻译数据已合并进 records_with_zh.json / zh_sources.json）
-    old = os.path.join(ROOT, "pack")
-    if os.path.isdir(old):
-        arch = os.path.join(ROOT, "archive")
-        os.makedirs(arch, exist_ok=True)
-        csv_src = os.path.join(old, "translations_zh-Hans.csv")
-        if os.path.exists(csv_src):
-            shutil.copy2(csv_src, os.path.join(arch, "v1_translations_zh-Hans.csv"))
-        shutil.rmtree(old)
-        print("[del] 已删除作废的 v1 包: pack\\  (CSV 备份到 archive\\v1_translations_zh-Hans.csv)")
-    for junk in ("ref_ko/translations/unique_sources_with_ko.json",):
-        p = os.path.join(ROOT, junk.replace("/", os.sep))
-        if os.path.exists(p) and os.path.getsize(p) == 0:
-            os.remove(p)
-            print("[del] 已删除 0 字节残留:", junk)
-
-    # 2) 组装交付目录
+    # 1) 组装交付目录
     if os.path.isdir(REL):
         shutil.rmtree(REL)
     os.makedirs(REL)
@@ -363,7 +349,7 @@ def main():
     with open(os.path.join(REL, "版本信息.json"), "w", encoding="utf-8") as f:
         json.dump(INFO, f, ensure_ascii=False, indent=2)
 
-    # 3) 打包 zip（含 licenses/ 子目录）
+    # 2) 打包 zip（含 licenses/ 子目录）
     if os.path.exists(ZIP):
         os.remove(ZIP)
     with zipfile.ZipFile(ZIP, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as zf:

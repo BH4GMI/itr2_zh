@@ -8,7 +8,10 @@
   - `Game.locres` 4611 条（原 2164 + `EnglishSource` 命名空间合并 2447）
   - `EnglishSource.uasset` 3332 条中 3019 条替换为中文（IoStore override）
   - 字体：用**游戏自带的 Noto Sans SC**（20,976 个汉字）替换 3 个离线字体 `.ufont`
-- 产物：`release_zh/` 与 `ITR2_Chinese_v2.zip`（默认被 gitignore，用脚本生成）
+- 产物：`release_zh/`（不入库）与 `ITR2_Chinese_v2.zip`（发布包，**随仓库保存**——
+  它同时是 `iostore_build.py` 的容器模板来源）；`dist_zh/`、`fonts/` 等中间产物用脚本生成、不入库
+- **构建链零上游代码依赖**（2026 阶段一重构）：全部格式解析/构建为本仓库独立实现，
+  自测与成品比对全部通过（见文末「格式实现与验证」）。
 
 > **仓库范围**
 > 本仓库仅包含汉化补丁本身，不涉及任何内存修改工具，也不包含游戏本体资源。
@@ -24,18 +27,26 @@ UE 挂载时先读 pak、再读松散文件，因此把 `Game.locres` 以松散�
 ## 目录结构
 
 ```
-├─ iostore.py                 自研 IoStore (.utoc/.ucas) 读取器
-├─ build_zh.py                主构建：locres pak + EnglishSource IoStore 补丁
-├─ build_font_pak.py          字体包：从游戏资源中裁出 Noto Sans SC 并覆盖 .ufont
-├─ make_release.py            清理旧产物 + 组装 release_zh/ 与 zip
-├─ prepare_records.py         ref_ko 原始数据 + zh_sources.json -> records_with_zh.json
-├─ normalize_zh.py            术语归一（把各批次译法拉齐）
+├─ textkey.py                 三种哈希：key_hash(CityHash64×23 折叠) / source_hash(CRC32 UTF-32LE) / source_id(SHA1[:16])
+├─ locres.py                  自研 UE .locres v3 解析 / 装配（parse/build 往返逐字节）
+├─ uasset_text.py             EnglishSource.uasset serial 文本区解析 + 文本补丁
+├─ pakbuild.py                自研 patch pak 构建（pyuepak 封装）
+├─ iostore_build.py           自研 IoStore (.utoc/.ucas) 写入端
+├─ iostore.py                 自研 IoStore 读取器（Oodle 惰性加载）
+├─ collect_game_inputs.py     【游戏机端】采集构建输入 -> game_inputs/ 交付
+├─ prepare_records.py         game_inputs + zh_sources.json -> records_with_zh.json
+├─ build_zh.py                主构建：locres pak + EnglishSource IoStore 补丁 -> dist_zh/
+├─ build_font_pak.py          字体包：从 game_inputs 的 uasset 裁出 Noto Sans SC 覆盖 .ufont
+├─ make_release.py            组装 release_zh/ 与 ITR2_Chinese_v2.zip
 ├─ verify_dist.py             产物独立校验（读回 pak / IoStore / locres / 字体）
-├─ validate_hash_formulas.py  校验 source_hash / key_hash 公式
-├─ make_zh_chunks.py          把待译原文切成翻译任务分片
-├─ progress_vs_ko.py          覆盖率统计
+├─ validate_hash_formulas.py  逐条校验 source_hash / key_hash 公式（5496 条）
+├─ setup_oodle.py             （可选）修复 pyuepak 自动下载失败的 Oodle DLL
 ├─ zh_sources.json            【翻译数据】source_id -> 简体中文（3772 条）
+├─ records_with_zh.json       位置记录 + 译文（prepare_records.py 生成，5496 条）
 ├─ translate/zh_full/         翻译分片原始产物（可追溯）
+├─ normalize_zh.py            【翻译阶段·历史】术语归一
+├─ make_zh_chunks.py          【翻译阶段·历史】把待译原文切分为翻译任务分片
+├─ progress_vs_ko.py          【翻译阶段·历史】覆盖率统计（需当时的 ref_ko 数据快照）
 ├─ docs/                      说明、术语表、分析与校验报告
 └─ scratch/                   逆向过程中的临时探查脚本（不入库）
 ```
@@ -44,10 +55,10 @@ UE 挂载时先读 pak、再读松散文件，因此把 `Game.locres` 以松散�
 
 ```bash
 # 0) 依赖
-pip install pyuepak cityhash            # IoStore/pak 读写
-python setup_oodle.py                   # 给 pyuepak 准备 Oodle 运行库（见下方说明）
-# 1) 取得外部参考数据（仅用于获得“英文原文清单 + 每条在 locres/uasset 中的位置”）
-git clone https://github.com/refracta/itr2-ko ref_ko
+pip install pyuepak cityhash            # pak 读写 / CityHash64
+# 1) 在游戏机采集构建输入（一次性；需已安装游戏），把 game_inputs/ 传回本机仓库旁
+python collect_game_inputs.py --game-dir "D:\...\IntoTheRadius2" --out D:\game_inputs
+#    采集：pakchunk0-Windows.pak、EnglishSource.uasset、NotoSansSC-*.uasset 等（SHA256 清单校验）
 # 2) 生成位置记录（把中文写进 records）
 python prepare_records.py
 # 3) 构建补丁产物 -> dist_zh/
@@ -57,37 +68,55 @@ python build_font_pak.py
 python make_release.py
 # 5) 校验
 python verify_dist.py
+python validate_hash_formulas.py
 ```
 
-游戏安装目录默认自动探测（`IntoTheRadius2.exe`），也可在脚本常量里写死。
+游戏安装目录只在第 1 步（游戏机端采集）需要；本机构建全部基于 `game_inputs/`，
+**不需要游戏安装、不需要 `ref_ko/`（上游参考仓库已不再被任何脚本加载）**。
 安装/卸载：`release_zh/安装汉化.cmd`、`release_zh/卸载汉化.cmd`（或 `install.ps1 -Uninstall`）。
 
-> `setup_oodle.py` 说明：pyuepak 在 import 时会联网下载 `oo2core_9_win64.dll`；本机实测该下载会拿到
-> 大小/哈希都不符的文件（13 KB，期望约 1 MB），随后 `import pyuepak` 直接报错。该脚本改为从本机
-> 已有游戏目录里找一个可用的 `oo2core*.dll`，校验（PE + `OodleLZ_Decompress` 可加载）后放进
-> pyuepak 包目录；也可手动指定路径：`python setup_oodle.py "D:\...\oo2core_8_win64.dll"`。
-> 本项目的补丁 pak 与 IoStore 容器均为**不压缩存储**，因此对 Oodle 版本不敏感（仅需能 import）。
+> **Oodle 说明**：pyuepak 在 import 时会联网下载 `oo2core_9_win64.dll`，实测该下载可能拿到
+> 大小/哈希不符的坏文件导致 `import pyuepak` 报错——此时运行 `python setup_oodle.py`
+> 从本机游戏目录找一个可用 `oo2core*.dll` 顶替（`iostore.py` 解压压缩容器时也会自动发现
+> Steam 库与 pyuepak 自带的 Oodle）。本项目的补丁 pak 与 IoStore 容器均为**不压缩存储**，
+> 对 Oodle 版本不敏感；只有读取游戏原版压缩 pak/ucas 时才需要解压能力。
+
+## 格式实现与验证（2026 阶段一重构）
+
+各模块的自测均可单独运行（`python <模块>.py`），关键结论：
+
+| 模块 | 实现内容 | 验证 |
+| --- | --- | --- |
+| `textkey.py` | `key_hash = CityHash64(UTF-16LE)` 低32+高32×23 折叠；`source_hash = CRC32(UTF-32LE)`；`source_id = SHA1(UTF-8)[:16]` | 6727/6727 样本命中；`validate_hash_formulas.py` 对 5496 条 records 全量复核 0 bad |
+| `locres.py` | v3 布局：magic/version/池偏移回填、命名空间分组、字符串池 `[FStr][ref_count]` | 原版 146,633 B 与金标准 379,964 B parse→build 往返**逐字节一致**；ref_count 守恒 |
+| `uasset_text.py` | serial 区 3332 条解析；文本替换 + `0xD0` serial_size 回写；ko==source 原字节保留 | patch(ko=source) **逐字节==原版**；假译文回读全中；与补丁成品 key 序/大小一致 |
+| `pakbuild.py` | pyuepak 封装的 V11 patch pak 打包 | 与金标准 pak **380,781 B 逐字节一致** |
+| `iostore_build.py` | utoc/ucas/伴生 pak 写入端（未压缩 method 0） | 金标准三件套**逐字节复现**；round-trip 读回一致 |
+
+**成品比对**：从游戏输入独立重建的 6 个二进制产物（locres pak、uasset pak/utoc/ucas、
+补丁 raw、字体 pak）与已发布 v2 成品**全部逐字节一致**；发布包其余文本文件除
+有意更新的文案外也逐字节一致（LICENSE/NOTICE/OFL 与成品仅 CRLF/LF 换行风格差异，内容一致）。
 
 ## 已知限制
 
 - 贴图上的文字（路牌、海报）不会变，需要单独的贴图补丁。
 - `Engine.locres`（引擎层文案）未汉化，出现频率低。
 - 语音仍为英文；本仓库不含音频替换。
-- 游戏更新后 locres 条目与 uasset 偏移会变化，需要按新版本重新提取并重建。
+- 游戏更新后 locres 条目与 uasset 偏移会变化，需要按新版本重新采集并重建。
 
 ## 致谢与许可
 
-- 构建流程参考开源项目 **[refracta/itr2-ko](https://github.com/refracta/itr2-ko)**：
-  IoStore 容器字节格式常量、`source_hash = CRC32(UTF-32LE)`、`key_hash = CityHash64(UTF-16LE)` 折叠算法，
-  以及“locres 与 uasset 必须同时打”的结论均来自该项目；本项目按其数据格式生成中文版补丁。
-  该项目未声明任何许可证，因此本仓库不复制其代码，仅在构建阶段作为可选依赖加载
-  （`ref_ko/` 不入库、不分发）。依赖范围与法律说明见 [`THIRD-PARTY.md`](THIRD-PARTY.md)。
+- 文件格式事实与哈希公式线索参考开源项目 **[refracta/itr2-ko](https://github.com/refracta/itr2-ko)**：
+  `source_hash = CRC32(UTF-32LE)`、`key_hash` 的 CityHash64 折叠方式、locres 头部字段语义，
+  以及“locres 与 uasset 必须同时打”的结论均来自该项目的公开说明。本仓库的解析/构建代码为
+  **独立实现**（经游戏原文件与成品逐字节验证），未复制、未加载其任何代码与数据文件。
+  该项目未声明任何许可证；依赖范围与法律说明见 [`THIRD-PARTY.md`](THIRD-PARTY.md)。
 - 字体取自游戏自身资源（`NotoSansSC-Regular/Bold`），其上游为以 SIL Open Font License 1.1
   授权的 Noto Sans SC；分发字体包时随附许可证全文（见 `licenses/OFL-NotoSansSC.txt`）。
 - Oodle 运行库为 Epic Games / RAD Game Tools 专有，本仓库与发布产物均不含其代码
   （自建容器采用未压缩存储，解压由游戏程序自身完成）。
 - 游戏资源版权归 CM Games 所有，本项目为爱好者制作的非官方补丁，不得用于商业用途。
-- 本仓库不包含游戏本体资源、`ref_ko` 原始数据与任何大体积二进制产物（见 `.gitignore`）。
+- 本仓库不包含游戏本体资源与任何大体积二进制产物（见 `.gitignore`）。
 
 ### 许可证
 
@@ -95,17 +124,17 @@ python verify_dist.py
 第三方内容清单与致谢见 [`NOTICE`](NOTICE) 与 [`THIRD-PARTY.md`](THIRD-PARTY.md)。
 
 该授权不涵盖：游戏本体资源及其派生数据（版权归 CM Games）、Noto Sans SC 字体
-（以 SIL OFL 1.1 授权）、Oodle 运行库（专有）。用于构建时所需的上游参考数据须自行获取，
-不在本仓库授权范围内。
+（以 SIL OFL 1.1 授权）、Oodle 运行库（专有）。
 
 ## 工作区依赖提醒
 
-仓库**不能单独重建**：下列目录被 `.gitignore` 排除，内容可能变动，重建前请确认存在。
+仓库本体可独立重建，仅需一次性采集的游戏输入（`.gitignore` 排除）：
 
 | 目录 / 文件 | 来源 | 缺失时如何处理 |
 | --- | --- | --- |
-| `ref_ko/` | `git clone https://github.com/refracta/itr2-ko ref_ko` | 构建必需 |
-| `iostore_out/EnglishSource.uasset` | 用 `iostore.py` 从游戏 `pakchunk0-Windows.utoc/.ucas` 提取 | 重新提取（需已安装游戏） |
-| 游戏安装目录 | Steam appid 2307350 | 脚本常量 `GAME` 默认 `D:\SteamLibrary\steamapps\common\IntoTheRadius2` |
-| `fonts/`、`dist_zh/`、`release_zh/` | 由脚本生成 | 依次运行 `build_font_pak.py` → `build_zh.py` → `make_release.py` |
-| `records_with_zh.json` | `prepare_records.py` 生成 | 重新运行该脚本 |
+| `../game_inputs/`（pakchunk0-Windows.pak、EnglishSource.uasset、NotoSansSC-*.uasset、GAME_Game.locres 等） | 游戏机运行 `collect_game_inputs.py` 采集交付 | 重新采集（需一台装有游戏的机器） |
+| `zh_sources.json` | 翻译数据（入库） | —— |
+| `fonts/`、`dist_zh/`、`release_zh/`、`records_with_zh.json` | 由脚本生成 | 依次运行 `prepare_records.py` → `build_zh.py` / `build_font_pak.py` → `make_release.py` |
+
+`ref_ko/`（上游参考仓库）**已不再需要**——构建链的全部格式实现均为独立实现
+（历史：早期构建脚本曾通过 `importlib` 加载其代码，2026 阶段一重构已移除）。
