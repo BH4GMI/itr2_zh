@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 import shutil
+import subprocess
 import zipfile
 from pathlib import Path
 
@@ -32,6 +33,8 @@ GAME_VERSION = "Hotfix Patch 1.1.2"
 INSTALL_PS1 = r'''param(
     [switch]$Uninstall,
     [switch]$NoFont,
+    [switch]$Scan,
+    [switch]$CleanOld,
     [string]$GameDir = ''
 )
 $ErrorActionPreference = 'Stop'
@@ -80,10 +83,150 @@ function Show-VersionCheck([string]$root) {
     } catch { }
 }
 
+function Show-Banner([string]$title) {
+    Write-Host ''
+    Write-Host ('=' * 62)
+    Write-Host ('  Into the Radius 2 简体中文补丁 · ' + $title)
+    Write-Host ('=' * 62)
+}
+
+# ---- 既有汉化/补丁残留扫描与清理 ----
+# 分级处理：本补丁文件、非 en 语言目录、松散 locres、旧的 DefaultCulture 配置为
+# 「确定项」，可直接清理；其它 *_P.pak、~mods、LogicMods 内容可能是别的 mod，
+# 一律列出清单并逐个询问，直接回车 = 保留（绝不误删）。
+function Get-Residue([string]$root) {
+    $paks = Join-Path $root 'IntoTheRadius2\Content\Paks'
+    $loc = Join-Path $root 'IntoTheRadius2\Content\Localization\Game'
+    $own = @(); $patch = @(); $mods = @(); $logic = @(); $lang = @(); $loose = @(); $cfg = @()
+    foreach ($f in $PatchFiles) {
+        if (Test-Path -LiteralPath (Join-Path $paks $f)) { $own += $f }
+    }
+    if (Test-Path -LiteralPath $paks) {
+        foreach ($f in @(Get-ChildItem -LiteralPath $paks -File -Filter '*.pak' -ErrorAction SilentlyContinue)) {
+            if ($PatchFiles -notcontains $f.Name -and $f.Name -ne 'pakchunk0-Windows.pak') { $patch += $f.FullName }
+        }
+        foreach ($sub in @('~mods', 'LogicMods')) {
+            $d = Join-Path $paks $sub
+            if (Test-Path -LiteralPath $d) {
+                $items = @(Get-ChildItem -LiteralPath $d -File -Recurse -ErrorAction SilentlyContinue | ForEach-Object { $_.FullName })
+                if ($sub -eq '~mods') { $mods = $items } else { $logic = $items }
+            }
+        }
+    }
+    foreach ($n in @('zh-Hans', 'zh-Hant', 'zh', 'chs', 'cht', 'zh_CN', 'zh_TW')) {
+        $p = Join-Path $loc $n
+        if (Test-Path -LiteralPath $p) { $lang += $p }
+    }
+    if (Test-Path -LiteralPath $loc) {
+        foreach ($f in @(Get-ChildItem -LiteralPath $loc -Recurse -File -ErrorAction SilentlyContinue)) {
+            if (($f.Extension -eq '.locres' -or $f.Extension -eq '.locmeta') -and $f.FullName -notmatch '\\en\\') {
+                $inLang = $false
+                foreach ($d in $lang) {
+                    if ($f.FullName.StartsWith($d, [System.StringComparison]::OrdinalIgnoreCase)) { $inLang = $true }
+                }
+                if (-not $inLang) { $loose += $f.FullName }
+            }
+        }
+    }
+    foreach ($rel in @('IntoTheRadius2\Saved\Config\Windows\DeviceProfiles.ini',
+                       'IntoTheRadius2\Saved\Config\Windows\Game.ini')) {
+        $c = Join-Path $root $rel
+        if (Test-Path -LiteralPath $c) {
+            $hits = @(Get-Content -LiteralPath $c -ErrorAction SilentlyContinue |
+                      Where-Object { $_ -match '^\s*DefaultCulture\s*=' })
+            if ($hits.Count -gt 0) { $cfg += $c }
+        }
+    }
+    return [pscustomobject]@{
+        Own = $own; Patch = $patch; Mods = $mods; Logic = $logic
+        Lang = $lang; Loose = $loose; Config = $cfg
+    }
+}
+
+function Show-Residue($r) {
+    if ($r.Own.Count)   { Write-Host ('  · 本补丁的旧安装文件: ' + $r.Own.Count + ' 个') }
+    if ($r.Lang.Count)  { Write-Host ('  · 旧版松散汉化语言目录: ' + $r.Lang.Count + ' 个')
+                          foreach ($p in $r.Lang) { Write-Host ('      ' + $p) } }
+    if ($r.Loose.Count) { Write-Host ('  · 非 en 的松散本地化文件: ' + $r.Loose.Count + ' 个')
+                          foreach ($p in $r.Loose) { Write-Host ('      ' + $p) } }
+    if ($r.Patch.Count) { Write-Host ('  · 其它补丁 pak（可能是别的汉化/补丁）: ' + $r.Patch.Count + ' 个')
+                          foreach ($p in $r.Patch) { Write-Host ('      ' + $p) } }
+    if ($r.Mods.Count)  { Write-Host ('  · ~mods 目录内容: ' + $r.Mods.Count + ' 个')
+                          foreach ($p in $r.Mods) { Write-Host ('      ' + $p) } }
+    if ($r.Logic.Count) { Write-Host ('  · LogicMods 目录内容: ' + $r.Logic.Count + ' 个')
+                          foreach ($p in $r.Logic) { Write-Host ('      ' + $p) } }
+    if ($r.Config.Count){ Write-Host ('  · 配置中的 DefaultCulture 设置: ' + $r.Config.Count + ' 个')
+                          foreach ($p in $r.Config) { Write-Host ('      ' + $p) } }
+}
+
+function Invoke-CleanResidue([string]$root, $r) {
+    $paks = Join-Path $root 'IntoTheRadius2\Content\Paks'
+    $n = 0
+    foreach ($f in $r.Own) {
+        $p = Join-Path $paks $f
+        if (Test-Path -LiteralPath $p) {
+            Remove-Item -LiteralPath $p -Force -ErrorAction SilentlyContinue
+            Write-Host "[OK] 已删除 $f"; $n++
+        }
+    }
+    foreach ($d in $r.Lang) {
+        if (Test-Path -LiteralPath $d) {
+            Remove-Item -LiteralPath $d -Recurse -Force -ErrorAction SilentlyContinue
+            Write-Host ('[OK] 已删除语言目录 ' + $d); $n++
+        }
+    }
+    foreach ($f in $r.Loose) {
+        if (Test-Path -LiteralPath $f) {
+            Remove-Item -LiteralPath $f -Force -ErrorAction SilentlyContinue
+            Write-Host ('[OK] 已删除 ' + $f); $n++
+        }
+    }
+    foreach ($c in $r.Config) {
+        $before = @(Get-Content -LiteralPath $c)
+        $after = @($before | Where-Object { $_ -notmatch '^\s*DefaultCulture\s*=' })
+        if ($after.Count -ne $before.Count) {
+            # 无 BOM UTF-8 写回：PowerShell 5.1 的 -Encoding UTF8 会写入 BOM，
+            # 可能使配置首节失效
+            [System.IO.File]::WriteAllLines($c, $after, (New-Object System.Text.UTF8Encoding($false)))
+            Write-Host ('[OK] 已清理 ' + $c + ' 中的 DefaultCulture 设置'); $n++
+        }
+    }
+    foreach ($f in @($r.Patch + $r.Mods + $r.Logic)) {
+        Write-Host ''
+        Write-Host ('[?] 疑似其它来源的文件: ' + $f) -ForegroundColor Yellow
+        $ans = ''
+        try { $ans = Read-Host '    删除请按 D 后回车，直接回车 = 保留' } catch { $ans = '' }
+        if ($ans -eq 'D' -or $ans -eq 'd') {
+            Remove-Item -LiteralPath $f -Recurse -Force -ErrorAction SilentlyContinue
+            Write-Host '[OK] 已删除'
+            $n++
+        } else {
+            Write-Host '[skip] 已保留'
+        }
+    }
+    return $n
+}
+
+Show-Banner $(if ($Scan) { '汉化残留扫描' }
+              elseif ($CleanOld) { '汉化残留清理' }
+              elseif ($Uninstall) { '卸载向导' }
+              else { '安装向导' })
+if (-not $Scan -and -not $CleanOld -and -not $Uninstall) {
+    Write-Host '[教程] 安装流程（约 1 分钟，无需启动参数）：'
+    Write-Host '  1. 前置检查：确认游戏版本、退出游戏、具备写入权限'
+    Write-Host '  2. 安装补丁：将补丁文件复制到游戏 Paks 目录'
+    Write-Host '  3. 启动验证：进入游戏确认界面为简体中文'
+    Write-Host '  详细说明与常见问题见随包《汉化说明.md》。'
+    Write-Host ''
+    Write-Host '-- 步骤 1/3 前置检查 --'
+}
 if (-not $GameDir) { $GameDir = Find-GameDir }
-if (-not $GameDir -or -not (Test-Path (Join-Path $GameDir 'IntoTheRadius2.exe'))) {
+if (-not $GameDir -or
+    -not (Test-Path -LiteralPath $GameDir -ErrorAction SilentlyContinue) -or
+    -not (Test-Path -LiteralPath (Join-Path $GameDir 'IntoTheRadius2.exe') -ErrorAction SilentlyContinue)) {
     Write-Host '[X] 找不到 Into the Radius 2 安装目录，请手动指定：' -ForegroundColor Red
     Write-Host "    powershell -NoProfile -ExecutionPolicy Bypass -File install.ps1 -GameDir 'D:\SteamLibrary\steamapps\common\IntoTheRadius2'"
+    Write-Host '    若仍无法解决，请参阅随包《汉化说明.md》第一节。'
     exit 1
 }
 
@@ -91,13 +234,48 @@ $paks = Join-Path $GameDir 'IntoTheRadius2\Content\Paks'
 Write-Host "[i] 游戏目录: $GameDir"
 Write-Host "[i] Paks 目录: $paks"
 Show-VersionCheck $GameDir
-
 # 游戏运行中会占用 pak 文件，必须先行退出，否则覆盖会失败
 $running = @(Get-Process -ErrorAction SilentlyContinue | Where-Object { $_.ProcessName -like 'IntoTheRadius2*' })
 if ($running.Count -gt 0) {
     Write-Host '[X] 检测到游戏正在运行（IntoTheRadius2.exe），请先完全退出游戏后再执行本脚本。' -ForegroundColor Red
     foreach ($p in $running) { Write-Host ("    运行中的进程: " + $p.ProcessName + " (PID " + $p.Id + ")") }
     exit 1
+}
+
+$residue = Get-Residue $GameDir
+$residueTotal = $residue.Own.Count + $residue.Patch.Count + $residue.Mods.Count +
+                $residue.Logic.Count + $residue.Lang.Count + $residue.Loose.Count + $residue.Config.Count
+
+if ($Scan) {
+    Write-Host ''
+    Write-Host '-- 扫描既有汉化 / 补丁残留 --'
+    if ($residueTotal -eq 0) {
+        Write-Host '[OK] 未发现既有汉化或补丁残留。'
+    } else {
+        Write-Host "[i] 共发现 $residueTotal 项："
+        Show-Residue $residue
+        Write-Host ''
+        Write-Host '[教程] 清理方式：运行安装器并选择 [4]，或执行 install.ps1 -CleanOld。'
+    }
+    exit 0
+}
+
+if ($CleanOld) {
+    Write-Host ''
+    Write-Host '-- 清理既有汉化 / 补丁残留 --'
+    if ($residueTotal -eq 0) {
+        Write-Host '[OK] 未发现既有汉化或补丁残留，无需清理。'
+        exit 0
+    }
+    Write-Host "[i] 共发现 $residueTotal 项："
+    Show-Residue $residue
+    Write-Host ''
+    $cleaned = Invoke-CleanResidue $GameDir $residue
+    Write-Host ''
+    Write-Host "[OK] 清理完成，共处理 $cleaned 项。"
+    Write-Host '[教程] 重新汉化：运行安装器并选择 [1] 安装简体中文补丁。'
+    Write-Host '  · 若 Steam 启动选项里留有 -CULTURE=... 参数，请一并删除。'
+    exit 0
 }
 
 if ($Uninstall) {
@@ -117,12 +295,16 @@ if ($Uninstall) {
             $before = @(Get-Content $cf)
             $after = @($before | Where-Object { $_ -notmatch '^\s*DefaultCulture\s*=' })
             if ($after.Count -ne $before.Count) {
-                Set-Content -Path $cf -Value $after -Encoding UTF8
+                [System.IO.File]::WriteAllLines($cf, $after, (New-Object System.Text.UTF8Encoding($false)))
                 Write-Host "[OK] 已清理 $rel 中的旧版 DefaultCulture 设置"
             }
         }
     }
-    Write-Host "[OK] 卸载完成（共移除 $n 个补丁文件）。若启动项里还留着 -CULTURE=zh-Hans，请一并删掉。"
+    Write-Host ''
+    Write-Host '[OK] 卸载完成（共移除 $n 个补丁文件），游戏已还原为英文原版。'
+    Write-Host '[教程] 后续：'
+    Write-Host '  · 重新安装：再次运行「安装汉化.cmd」。'
+    Write-Host '  · 若启动项中留有 -CULTURE=zh-Hans 参数，请一并删除。'
     exit 0
 }
 
@@ -147,12 +329,33 @@ if (-not $writable) {
     exit 1
 }
 
-$others = @(Get-ChildItem $paks -Filter '*_P.pak' -ErrorAction SilentlyContinue | Where-Object { $PatchFiles -notcontains $_.Name })
-if ($others.Count -gt 0) {
-    Write-Host '[!] 检测到其它补丁 pak，可能与本补丁冲突；如遇异常请先移除：' -ForegroundColor Yellow
-    foreach ($o in $others) { Write-Host ("    " + $o.Name) }
+if ($residueTotal -gt 0) {
+    Write-Host "[!] 发现 $residueTotal 项既有汉化 / 补丁残留（可能与本补丁冲突）：" -ForegroundColor Yellow
+    Show-Residue $residue
+    $certain = $residue.Own.Count + $residue.Lang.Count + $residue.Loose.Count + $residue.Config.Count
+    if ($certain -gt 0) {
+        Write-Host ''
+        $ans = ''
+        try { $ans = Read-Host '[?] 先清理本补丁旧安装文件与旧版松散汉化残留？(Y/N，回车 = 否)' } catch { $ans = '' }
+        if ($ans -eq 'Y' -or $ans -eq 'y') {
+            $only = [pscustomobject]@{
+                Own = $residue.Own; Lang = $residue.Lang; Loose = $residue.Loose
+                Config = $residue.Config; Patch = @(); Mods = @(); Logic = @()
+            }
+            $cleaned = Invoke-CleanResidue $GameDir $only
+            Write-Host "[OK] 已清理 $cleaned 项旧安装残留。"
+        } else {
+            Write-Host '[skip] 保留现有文件，继续安装（同名文件将被覆盖）。'
+        }
+    }
+    if ($residue.Patch.Count -gt 0 -or $residue.Mods.Count -gt 0 -or $residue.Logic.Count -gt 0) {
+        Write-Host '[i] 其它来源的文件未自动处理；如需彻底清理，请运行安装器选择 [4] 逐个确认。'
+    }
 }
+Write-Host '[OK] 前置检查通过'
 
+Write-Host ''
+Write-Host '-- 步骤 2/3 安装补丁 --'
 $copied = 0
 foreach ($f in $PatchFiles) {
     if ($f -eq $FontFile -and $NoFont) { Write-Host "[skip] $f（已指定 -NoFont）"; continue }
@@ -162,7 +365,14 @@ foreach ($f in $PatchFiles) {
     Write-Host "[OK] 已安装 $f"
     $copied++
 }
-Write-Host "[OK] 安装完成（共 $copied 个文件）。直接启动游戏即可，无需启动参数，亦无需在设置中切换语言。"
+Write-Host ''
+Write-Host '-- 步骤 3/3 安装完成 --'
+Write-Host "[OK] 共安装 $copied 个补丁文件。"
+Write-Host '[教程] 后续使用：'
+Write-Host '  · 直接启动游戏，界面、任务、物品说明与字幕为简体中文（无需启动参数或语言设置）。'
+Write-Host '  · 文字显示为方框或空白：请改用「不含字体」方式安装，并到发布页反馈。'
+Write-Host '  · 游戏更新后中文失效：请先卸载，待补丁更新后重新安装。'
+Write-Host '  · 卸载或重新安装：重新运行安装程序并选择对应选项（压缩包版可双击对应 .cmd）。'
 Write-Host '[i] 授权信息见随包 LICENSE、NOTICE 与 licenses\OFL-NotoSansSC.txt。'
 '''
 
@@ -190,6 +400,22 @@ echo.
 pause
 '''
 
+CMD_CLEAN = '''@echo off
+chcp 936 >nul
+cd /d "%~dp0"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install.ps1" -CleanOld
+echo.
+pause
+'''
+
+CMD_SCAN = '''@echo off
+chcp 936 >nul
+cd /d "%~dp0"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install.ps1" -Scan
+echo.
+pause
+'''
+
 README = '''# Into the Radius 2 简体中文汉化包 v2
 
 适用版本：**{version}**（Steam buildid `{build}`，appid 2307350）
@@ -198,6 +424,14 @@ README = '''# Into the Radius 2 简体中文汉化包 v2
 ---
 
 ## 一、安装
+
+### 方式一：单文件安装器（推荐）
+
+下载 **`ITR2简体中文补丁v2_安装器.exe`**，放入游戏目录或任意位置，**双击运行**，
+按提示选择 `[1] 安装简体中文补丁`。安装器会自动定位 Steam 游戏目录并完成复制；
+若文字显示为方框，可重新运行并选择 `[2] 安装（不含字体覆盖）`。
+
+### 方式二：压缩包
 
 1. 把压缩包解压到任意位置（不要放在游戏目录里也行）。
 2. **双击 `安装汉化.cmd`**。脚本会自动找到 Steam 游戏目录，把 5 个补丁文件复制进
@@ -217,9 +451,19 @@ pakchunk100-ZH_Fonts_P.pak      （字体覆盖，见第五节）
 不想替换字体（例如你更想用系统字体方案）：双击 `安装汉化_不含字体.cmd`，或运行
 `powershell -NoProfile -ExecutionPolicy Bypass -File install.ps1 -NoFont`。
 
+### 安装前的残留清理（可选）
+
+若游戏内此前装过其它汉化或旧版补丁，可先运行安装器选择 `[4] 扫描并清理既有汉化残留`
+（压缩包版双击 `清理旧汉化.cmd`；只查看不清理可双击 `扫描汉化残留.cmd`）。
+
+清理规则：本补丁旧文件、旧版松散语言目录（`zh-Hans` 等）、非 `en` 的本地化文件、
+配置里的旧 `DefaultCulture` 行会直接清理；其它 `*_P.pak`、`~mods`、`LogicMods` 内容
+**逐项询问**，直接回车即保留——不会误删你安装的其它 mod。
+
 ## 二、卸载
 
-双击 `卸载汉化.cmd`。它会删除上述 5 个文件，并顺手清理旧版(v1)留下的
+单文件安装器：重新运行并选择 `[3] 卸载补丁`；压缩包版：双击 `卸载汉化.cmd`。
+两者都会删除上述 5 个文件，并顺手清理旧版(v1)留下的
 `Content\\Localization\\Game\\zh-Hans\\` 目录和配置文件里的 `DefaultCulture` 行。
 
 ## 三、这一版包含什么
@@ -307,6 +551,105 @@ DOC_FILES = [
     (os.path.join("licenses", "OFL-NotoSansSC.txt"), os.path.join("licenses", "OFL-NotoSansSC.txt")),
 ]
 
+# ---- 单文件安装器（IExpress 自解压 exe，Windows 自带工具，零第三方依赖）----
+# IExpress 不支持子目录且对非 ASCII 路径不可靠：暂存目录用 ASCII 名、载荷平铺、
+# 文件名全部 ASCII（生成后再由本脚本改名为中文友好名）。
+SFX_STAGE = os.path.join(ROOT, "_sfx_stage")
+SFX_EXE_TMP = os.path.join(ROOT, "ITR2_ZH_Patch_v2_Setup.exe")
+SFX_EXE = os.path.join(ROOT, "ITR2简体中文补丁v2_安装器.exe")
+SFX_EXTRA = ["LICENSE", "NOTICE", "OFL-NotoSansSC.txt", "README-zh.md"]
+
+INSTALL_CMD_SFX = '''@echo off
+chcp 936 >nul
+cd /d "%~dp0"
+title Into the Radius 2 简体中文补丁 · 安装器
+echo [%DATE% %TIME%] 单文件安装器启动 >> "%TEMP%\\ITR2_installer_launch.log"
+
+echo.
+echo   Into the Radius 2 简体中文补丁 · 单文件安装器 v2
+echo   ------------------------------------------------------------
+echo    [1] 安装简体中文补丁（推荐）
+echo    [2] 安装（不含字体覆盖）
+echo    [3] 卸载补丁
+echo    [4] 扫描并清理既有汉化残留
+echo    [0] 退出
+echo.
+echo   说明：安装器自动定位 Steam 游戏目录；把本文件放进游戏目录再运行亦可。
+echo.
+set "CH="
+set /p "CH=请输入选项并回车（直接回车 = 1）: "
+if not defined CH set "CH=1"
+
+if "%CH%"=="1" powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install.ps1"
+if "%CH%"=="2" powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install.ps1" -NoFont
+if "%CH%"=="3" powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install.ps1" -Uninstall
+if "%CH%"=="4" powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0install.ps1" -CleanOld
+if "%CH%"=="0" exit /b 0
+
+echo.
+pause
+'''
+
+
+def build_installer():
+    """生成单文件安装器（IExpress 自解压 exe）。
+
+    载荷平铺且全部 ASCII 文件名：install.cmd（菜单入口）+ install.ps1 + 5 个补丁 pak
+    + 许可证/声明/说明。运行后解压目录会被系统清理，安装动作在此之前完成。
+    """
+    iexpress = os.path.join(os.environ.get("WINDIR", r"C:\Windows"), "System32", "iexpress.exe")
+    if not os.path.exists(iexpress):
+        print("[!] 跳过单文件安装器：未找到 iexpress.exe（该功能仅 Windows 提供）")
+        return None
+
+    if os.path.isdir(SFX_STAGE):
+        shutil.rmtree(SFX_STAGE)
+    os.makedirs(SFX_STAGE)
+    with open(os.path.join(SFX_STAGE, "install.cmd"), "w", encoding="gbk", newline="\r\n") as f:
+        f.write(INSTALL_CMD_SFX)
+    shutil.copy2(os.path.join(REL, "install.ps1"), SFX_STAGE)
+    for f in FILES:
+        shutil.copy2(os.path.join(REL, f), SFX_STAGE)
+    shutil.copy2(os.path.join(REL, "LICENSE"), SFX_STAGE)
+    shutil.copy2(os.path.join(REL, "NOTICE"), SFX_STAGE)
+    shutil.copy2(os.path.join(REL, "licenses", "OFL-NotoSansSC.txt"), SFX_STAGE)
+    shutil.copy2(os.path.join(REL, "汉化说明.md"), os.path.join(SFX_STAGE, "README-zh.md"))
+
+    load = ["install.cmd", "install.ps1"] + list(FILES) + SFX_EXTRA
+    lines = [
+        "[Version]", "Class=IEXPRESS", "SEDVersion=3",
+        "[Options]", "PackagePurpose=InstallApp",
+        "ShowInstallProgramWindow=0", "HideExtractAnimation=1", "UseLongFileName=1",
+        "InsideCompressed=0", "CAB_FixedSize=0", "CAB_ResvCodeSigning=0", "RebootMode=N",
+        "InstallPrompt=", "DisplayLicense=", "FinishMessage=",
+        "TargetName=" + SFX_EXE_TMP,
+        "FriendlyName=Into the Radius 2 Chinese Patch v2",
+        "AppLaunched=install.cmd",
+        "PostInstallCmd=<None>", "AdminQuietInstCmd=", "UserQuietInstCmd=",
+        "SourceFiles=SourceFiles", "[Strings]",
+    ]
+    lines += ['FILE%d="%s"' % (i, n) for i, n in enumerate(load)]
+    lines += ["[SourceFiles]", "SourceFiles0=" + SFX_STAGE + "\\", "[SourceFiles0]"]
+    lines += ["%%FILE%d%%=" % i for i in range(len(load))]
+    sed_path = os.path.join(SFX_STAGE, "itr2_zh.sed")
+    with open(sed_path, "w", encoding="ascii", newline="\r\n") as f:
+        f.write("\n".join(lines) + "\n")
+
+    if os.path.exists(SFX_EXE_TMP):
+        os.remove(SFX_EXE_TMP)
+    print("[i] 正在生成单文件安装器（IExpress 压缩 %d 个文件，约需 1-3 分钟）…" % len(load))
+    r = subprocess.run([iexpress, "/N", "/Q", sed_path], capture_output=True, timeout=900)
+    if r.returncode != 0 or not os.path.exists(SFX_EXE_TMP):
+        print("[!] 单文件安装器生成失败（iexpress 退出码 %s）：%s"
+              % (r.returncode, r.stdout.decode("gbk", "replace")[-400:]))
+        return None
+    if os.path.exists(SFX_EXE):
+        os.remove(SFX_EXE)
+    shutil.move(SFX_EXE_TMP, SFX_EXE)
+    shutil.rmtree(SFX_STAGE, ignore_errors=True)
+    print("[setup] %s  %d B" % (os.path.basename(SFX_EXE), os.path.getsize(SFX_EXE)))
+    return SFX_EXE
+
 
 def sha1(path):
     h = hashlib.sha1()
@@ -341,6 +684,8 @@ def main():
         ("安装汉化.cmd", CMD_INSTALL, "gbk"),
         ("安装汉化_不含字体.cmd", CMD_INSTALL_NOFONT, "gbk"),
         ("卸载汉化.cmd", CMD_UNINSTALL, "gbk"),
+        ("清理旧汉化.cmd", CMD_CLEAN, "gbk"),
+        ("扫描汉化残留.cmd", CMD_SCAN, "gbk"),
     ):
         with open(os.path.join(REL, name), "w", encoding=enc, newline="\r\n") as f:
             f.write(body)
@@ -366,6 +711,9 @@ def main():
             rel = os.path.relpath(p, REL)
             print("   %-38s %10d B" % (rel, os.path.getsize(p)))
     print("[zip] %s  %d B" % (ZIP, os.path.getsize(ZIP)))
+
+    # 3) 单文件安装器
+    build_installer()
 
 
 if __name__ == "__main__":
