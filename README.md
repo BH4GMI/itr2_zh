@@ -42,6 +42,7 @@ UE 挂载时先读 pak、再读松散文件，因此把 `Game.locres` 以松散�
 ├─ make_release.py            组装 release_zh/ 与 ITR2_Chinese_v2.zip
 ├─ verify_dist.py             产物独立校验（读回 pak / IoStore / locres / 字体）
 ├─ validate_hash_formulas.py  逐条校验 source_hash / key_hash 公式（5496 条）
+├─ crack_cipher.py            解密 5 条加密本地化文本（自定义维吉尼亚；--verify 自检）
 ├─ setup_oodle.py             （可选）修复 pyuepak 自动下载失败的 Oodle DLL
 ├─ zh_sources.json            【翻译数据】source_id -> 简体中文（3772 条）
 ├─ records_with_zh.json       位置记录 + 译文（prepare_records.py 生成，5496 条）
@@ -54,7 +55,8 @@ UE 挂载时先读 pak、再读松散文件，因此把 `Game.locres` 以松散�
 │  ├─ glossary_zh.md          术语表（原文 -> 中文对照口径）
 │  ├─ ko_analysis.md          上游韩化资源清点（该资源不随本仓库分发）
 │  ├─ merge_report.md         合并与校验报告
-│  └─ 剧情与世界观.md         ⚠️【全文剧透】游戏剧情、世界观与结局分歧完整文档
+│  ├─ 剧情与世界观.md         ⚠️【全文剧透】游戏剧情、世界观与结局分歧完整文档
+│  └─ 密文破解.md             ⚠️【剧透】5 条加密文本的破解报告与完整明文
 └─ scratch/                   逆向过程中的临时探查脚本（不入库）
 ```
 
